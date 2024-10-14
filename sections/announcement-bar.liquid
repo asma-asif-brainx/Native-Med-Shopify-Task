@@ -1,3 +1,18 @@
+<!--  Access custom stylesheet-->
+{% if section.settings.include-custom-style  %}
+  {{ 'announcement-bar-custom.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<style>
+  #shopify-section-{{ section.id }} .utility-bar-main
+  {
+    background-color: {{ section.settings.announcement-bar-bg-color }}
+  }
+  .announcement-message-text-main{
+    color : {{ section.settings.announcement-bar-text-color }};
+  }
+</style>
+
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
@@ -19,7 +34,7 @@
 {% endif %}
 
 <div
-  class="utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+  class="utility-bar-main utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
   {{ block.shopify_attributes }}
 >
   <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
@@ -28,28 +43,43 @@
     {%- endif -%}
     {%- if section.blocks.size == 1 -%}
       <div
-        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+        class="one-announcement-main announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
         role="region"
         aria-label="{{ 'sections.header.announcement' | t }}"
         {{ block.shopify_attributes }}
       >
-        {%- if section.blocks.first.settings.text != blank -%}
-          {%- if section.blocks.first.settings.link != blank -%}
-            <a
-              href="{{ section.blocks.first.settings.link }}"
-              class="announcement-bar__link link link--text focus-inset animate-arrow"
-            >
-          {%- endif -%}
-          <p class="announcement-bar__message h5">
-            <span>{{ section.blocks.first.settings.text | escape }}</span>
+        {% if section.blocks.first.settings.add-built-in-announcement-message %}
+          {%- if section.blocks.first.settings.text != blank -%}
+            {%- if section.blocks.first.settings.link != blank -%}
+              <a
+                href="{{ section.blocks.first.settings.link }}"
+                class="announcement-bar__link link link--text focus-inset animate-arrow"
+              >
+            {%- endif -%}
+            <p class="message-announcement-bar announcement-bar__message h5">
+              <span>{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
             {%- endif -%}
-          </p>
-          {%- if section.blocks.first.settings.link != blank -%}
-            </a>
+            </p>
+            {%- if section.blocks.first.settings.link != blank -%}
+              </a>
+            {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
+        {% endif %}
+
+        {% if section.settings.add-custom-announcement-message %}
+          <div class="announcement-message-main-div">
+            <img class="announce-image" src="{{ section.blocks.first.settings.message-pre-image | image_url }}" width= "" height="" alt="Custom Image">
+
+            <div class="announcement-message-text-main" >
+            <span class="pre-text"> {{ section.blocks.first.settings.pre-text }} </span>
+            <span class="mid-text"> {{ section.blocks.first.settings.mid-text }}</span>
+            <span class="post-text"> {{ section.blocks.first.settings.post-text }} </span>
+            </div>
+          </div>
+        {% endif %}
+
       </div>
     {%- elsif section.blocks.size > 1 -%}
       <slideshow-component
@@ -237,7 +267,34 @@
       "id": "enable_language_selector",
       "default": false,
       "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
-    }
+    },
+    {
+      "type": "color",
+      "id": "announcement-bar-bg-color",
+      "label": "Announcement bar background color"
+    },
+    {
+      "type": "checkbox",
+      "id": "include-custom-style",
+      "label": "Apply custom styling to announcement bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "add-custom-announcement-message",
+      "label": "Add custom announcement message",
+      "default":false
+    },
+    {
+      "type": "checkbox",
+      "id": "add-built-in-announcement-message",
+      "label": "Add built-in announcement message",
+      "default":true
+    },
+    {
+      "type": "color",
+      "id": "announcement-bar-text-color",
+      "label": "Announcement bar text color"
+    },
   ],
   "blocks": [
     {
@@ -254,7 +311,28 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-        }
+        },
+        {
+          "type": "text",
+          "id": "pre-text",
+          "label": "Message pre text"
+        },
+        {
+          "type": "text",
+          "id": "post-text",
+          "label": "Message post text"
+        },
+        {
+          "type": "text",
+          "id": "mid-text",
+          "label": "Message mid text"
+        },
+        {
+          "type": "image_picker",
+          "id": "message-pre-image",
+          "label": "Message pre image"
+        },
+        
       ]
     }
   ],

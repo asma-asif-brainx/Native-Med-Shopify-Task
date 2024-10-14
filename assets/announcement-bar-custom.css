@@ -1,0 +1,39 @@
+.utility-bar-main{
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.one-announcement-main .announcement-message-main-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.announcement-message-main-div .announcement-message-text-main{
+    font-size: 13px !important;
+    font-family: 'Normal';
+}
+.announcement-message-text-main .mid-text{
+    font-family: 'Bold';
+}   
+.announcement-message-main-div .announce-image{
+    width: 16px;
+    height: 16px;
+}
+@media screen and (max-width:767px) {
+    .one-announcement-main .announcement-message-main-div{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .announcement-message-main-div .announcement-message-text-main{
+        font-size: 8px !important;
+    }
+    .announcement-message-main-div .announce-image{
+        width: 12px;
+        height: 12px;
+    }
+}

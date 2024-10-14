@@ -8,8 +8,12 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "",
+            "link": "",
+            "pre-text": "Summer Savings: Semaglutide for Just",
+            "post-text": "Any Dose!",
+            "mid-text": "$169\/mo.",
+            "message-pre-image": "shopify:\/\/shop_images\/Group.svg"
           }
         }
       },
@@ -23,14 +27,19 @@
         "auto_rotate": false,
         "change_slides_speed": 5,
         "enable_country_selector": false,
-        "enable_language_selector": false
+        "enable_language_selector": false,
+        "announcement-bar-bg-color": "#7e4c8b",
+        "include-custom-style": true,
+        "add-custom-announcement-message": true,
+        "add-built-in-announcement-message": false,
+        "announcement-bar-text-color": "#ffffff"
       }
     },
     "header": {
       "type": "header",
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
+        "menu": "native-med-header-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
