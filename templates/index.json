@@ -6,8 +6,20 @@
         "heading": {
           "type": "heading",
           "settings": {
+            "add-built-in-banner-heading": false,
+            "add-custom-banner-heading": true,
+            "heading-one": "Weight Loss",
+            "heading-two": "Backed By",
+            "heading-three": "Science",
             "heading": "Browse our latest products",
             "heading_size": "h0"
+          }
+        },
+        "text_fGkYyb": {
+          "type": "text",
+          "settings": {
+            "text": "No Diet. No Exercise.Ditch The Weight, Gain Control.",
+            "text_style": "body"
           }
         },
         "button": {
@@ -24,16 +36,20 @@
       },
       "block_order": [
         "heading",
+        "text_fGkYyb",
         "button"
       ],
       "settings": {
+        "include-custom-style": true,
+        "heading-three-color": "#7e4c8b",
+        "image": "shopify:\/\/shop_images\/banner-women.jpg",
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
+        "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "image_behavior": "none",
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-3",
+        "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
@@ -50,12 +66,11 @@
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -63,6 +78,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }

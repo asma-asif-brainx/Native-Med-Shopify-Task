@@ -51,7 +51,16 @@
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "nav-items-text-color": "#2d2d2d",
+        "include-custom-style": true,
+        "show-built-in-account-icon": false,
+        "add-search-icon-built-in": false,
+        "add-search-icon-custom": true,
+        "add-built-in-header-cart": false,
+        "add-custom-header-cart": true,
+        "cart-count-bg-color": "#7e4c8b",
+        "header-active-item-bg-color": "#ebe5ed"
       }
     }
   },

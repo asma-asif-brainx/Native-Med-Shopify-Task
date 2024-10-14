@@ -1,0 +1,20 @@
+.banner-heading-main .banner-head-one, .banner-heading-main .banner-head-two{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-size: 60px;
+    font-family: 'Normal';
+}
+.banner-heading-main  .banner-head-three{
+    font-family: 'Medium';
+    font-style: italic;
+}
+.banner-heading-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner-text-main  .banner-text{
+    font-size: 15px;
+    font-family: 'Normal';
+}

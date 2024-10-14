@@ -16,9 +16,14 @@
       aria-label="{{ 'general.search.search' | t }}"
     >
       <span>
-        <span class="svg-wrapper">
-          {{- 'icon-search.svg' | inline_asset_content -}}
-        </span>
+        {% if section.settings.add-search-icon-built-in %}
+          <span class="svg-wrapper">
+            {{- 'icon-search.svg' | inline_asset_content -}}
+          </span>
+        {% endif %}
+        {% if section.settings.add-search-icon-custom %}
+          {%- render 'search-icon-custom'-%}
+        {% endif %}
         <span class="svg-wrapper header__icon-close">
           {{- 'icon-close.svg' | inline_asset_content -}}
         </span>

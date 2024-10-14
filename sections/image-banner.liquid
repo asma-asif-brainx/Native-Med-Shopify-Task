@@ -1,3 +1,15 @@
+<!--  Access custom stylesheet-->
+{% if section.settings.include-custom-style  %}
+  {{ 'image-banner-custom.css' | asset_url | stylesheet_tag }}
+{% endif %}
+<style>
+  #shopify-section-{{ section.id }} .banner-heading-main  .banner-head-three
+  {
+    color: {{ section.settings.heading-three-color }};
+  }
+
+  </style>
+
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
@@ -120,15 +132,25 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
-              {{ block.shopify_attributes }}
-            >
-              {{ block.settings.heading }}
-            </h2>
+            {% if block.settings.add-built-in-banner-heading %}
+              <h2
+                class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {% endif %}
+            {% if block.settings.add-custom-banner-heading %}
+              <div class="banner-heading-main">
+                <span class="banner-head-one">{{ block.settings.heading-one }} </span>
+                <span class="banner-head-two"> {{ block.settings.heading-two }}  <span class="banner-head-three">{{ block.settings.heading-three }} </span></span>
+              </div>
+
+            {% endif %}
+
           {%- when 'text' -%}
-            <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
+            <div class="banner-text-main  banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+              <p class="banner-text" >{{ block.settings.text }}</p>
             </div>
           {%- when 'buttons' -%}
             <div
@@ -175,6 +197,17 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "include-custom-style",
+      "label": "add custom styling to banner",
+      "default" :false
+    },
+    {
+      "type": "color",
+      "id": "heading-three-color",
+      "label": "Heading three text color"
+    },
     {
       "type": "image_picker",
       "id": "image",
@@ -367,6 +400,33 @@
       "name": "t:sections.image-banner.blocks.heading.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "add-built-in-banner-heading",
+          "default": true,
+          "label": "Add built in banner heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "add-custom-banner-heading",
+          "default": false,
+          "label": "Add custom banner heading"
+        },
+        {
+          "type": "text",
+          "id": "heading-one",
+          "label": "Custom heading one"
+        },
+        {
+          "type": "text",
+          "id": "heading-two",
+          "label": "Custom heading two"
+        },
+        {
+          "type": "text",
+          "id": "heading-three",
+          "label": "Custom heading three"
+        },
         {
           "type": "inline_richtext",
           "id": "heading",

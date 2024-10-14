@@ -1,0 +1,32 @@
+.header-list-items span{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Normal';
+}
+.header-list-items .header-nav-items-link:active{
+    width: 68px;
+    height: 33px;
+    border-radius: 60px;
+}
+.header-logo-link .header-logo-image-wrapper{
+    width: 108px;
+    height: 67px;
+}
+.header-custom{
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+    justify-content: space-between;
+    display: flex;
+}
+.custom-cart-count-bubble {
+    font-size: 14px;
+    font-family: 'Normal';
+    top: 4% !important; 
+    left: 66% !important;
+    height: 2.2rem !important;
+    width: 2.2rem !important;
+}
+.header-nav-items-link:hover, .header-nav-items-link .header-active-menu-item:hover{
+    text-decoration: none !important;
+    list-style-type: none !important;
+}
