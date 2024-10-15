@@ -1,3 +1,14 @@
+<!--  Access custom stylesheet-->
+{% if section.settings.include-custom-style  %}
+  {{ 'image-with-text-custom.css' | asset_url | stylesheet_tag }}
+{% endif %}
+<style>
+  #shopify-section-{{ section.id }} {
+   
+  }
+
+</style>
+
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -73,6 +84,37 @@
                   >
                     {{ block.settings.heading }}
                   </h2>
+
+                  {% if block.settings.add-img-text-div %}
+                    <div>
+                      <div>
+                        {% if block.settings.sublock-one-image != blank %}
+                          <img class="" src="{{ block.settings.sublock-one-image | image_url }}" width= "" height="" alt="Custom Image">
+                        {% endif %}
+                        <span>{{ block.settings.sublock-one-text }}</span>
+                      </div>
+                      <div>
+                        {% if block.settings.sublock-two-image != blank %}
+                          <img class="" src="{{ block.settings.sublock-two-image | image_url }}" width= "" height="" alt="Custom Image">
+                        {% endif %}
+                        <span>{{ block.settings.sublock-two-text }}</span>
+                      </div>
+                      <div>
+                        {% if block.settings.sublock-three-image != blank %}
+                          <img class="" src="{{ block.settings.sublock-three-image | image_url }}" width= "" height="" alt="Custom Image">
+                        {% endif %}
+                        <span>{{ block.settings.sublock-three-text }}</span>
+                      </div>
+                      <div>
+                        {% if block.settings.sublock-four-image != blank %}
+                          <img class="" src="{{ block.settings.sublock-four-image | image_url }}" width= "" height="" alt="Custom Image">
+                        {% endif %}
+                        <span>{{ block.settings.sublock-four-text }}</span>
+                      </div>
+
+                    </div>
+                  {% endif %}
+
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
@@ -321,6 +363,12 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "include-custom-style",
+      "label": "add custom styling to image with text section",
+      "default" :false
     }
   ],
   "blocks": [
@@ -329,6 +377,53 @@
       "name": "t:sections.image-with-text.blocks.heading.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "add-img-text-div",
+          "label": "Add img text div"
+        },
+        {
+          "type": "image_picker",
+          "id": "sublock-one-image",
+          "label": "Sublock one image"
+        },
+        {
+          "type": "image_picker",
+          "id": "sublock-two-image",
+          "label": "Sublock two image"
+        },
+        {
+          "type": "image_picker",
+          "id": "sublock-three-image",
+          "label": "Sublock three image"
+        },
+        {
+          "type": "image_picker",
+          "id": "sublock-four-image",
+          "label": "Sublock four image"
+        },
+        {
+          "type": "text",
+          "id": "sublock-one-text",
+          "label": "Sublock one text"
+        },
+        {
+          "type": "text",
+          "id": "sublock-two-text",
+          "label": "Sublock two text"
+        },
+        {
+          "type": "text",
+          "id": "sublock-three-text",
+          "label": "Sublock three text"
+        },
+        {
+          "type": "text",
+          "id": "sublock-four-text",
+          "label": "Sublock four text"
+        },
+
+        
         {
           "type": "inline_richtext",
           "id": "heading",

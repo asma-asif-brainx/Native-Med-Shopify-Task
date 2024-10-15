@@ -1,16 +1,19 @@
 <!--  Access custom stylesheet-->
 {% if section.settings.include-custom-style  %}
-  {{ 'multicolumn-custom.css' | asset_url | stylesheet_tag }}
+    {{ 'easy-steps-custom.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
 <style>
-  #shopify-section-{{ section.id }} .custom-title-wrapper .custom-post-title
-  {
-    color: {{ section.settings.post-heading-color}}
-  }
-  #shopify-section-{{ section.id }} .custom-card-list .custom-multicolumn-card{
-    background-color: {{ section.settings.card-bg-color }} !important;
-  }
+    #shopify-section-{{ section.id }} .easy-steps-section{
+        background-color: {{ section.settings.section-bg-color }}
+    }
+    #shopify-section-{{ section.id }}  .easy-step-head-main .easy-subhead {
+        color: {{ section.settings.easy-step-heading-color }}
+    }
+    #shopify-section-{{ section.id }}  .easy-steps-info .easy-steps-count-head{
+        color: {{ section.settings.card-count-text-color }};
+        background-color: {{ section.settings.card-count-bg-color }};
+    }
 </style>
 
 
@@ -39,21 +42,24 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="easy-steps-section multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div
-    class="page-width-custom page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
       data-cascade
     {% endif %}
   >
     {%- unless section.settings.title == blank -%}
-      <div class="custom-title-wrapper title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="custom-title title inline-richtext {{ section.settings.heading_size }}">
+      <div class="easy-step-head-main title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+        <h2 class="easy-step-head title inline-richtext {{ section.settings.heading_size }}">
           {{ section.settings.title }}
         </h2>
-        {% if section.settings.post-head != blank %}
-          <span class="custom-post-title"> {{ section.settings.post-head }} </span>
+        {% if section.settings.easy-subhead-text != blank %}
+            <span class="easy-subhead">
+                {{ section.settings.easy-subhead-text }}
+            </span>
         {% endif %}
+
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
           <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">
             {{- section.settings.button_label | escape -}}
@@ -87,19 +93,19 @@
 
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="custom-card-list multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="easy-steps-list multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            <div class="custom-multicolumn-card multicolumn-card content-container">
+            <div class="easy-step-card multicolumn-card content-container">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="custom-multicolumn-card-image-wrapper multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                <div class="easy-step-card-media multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
@@ -137,12 +143,12 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="card-info-main multicolumn-card__info">
+              <div class="multicolumn-card__info easy-steps-info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="card-info-heading inline-richtext">{{ block.settings.title }}</h3>
+                  <h3 class="easy-steps-count-head inline-richtext">{{ block.settings.title }}</h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div class="card-description rte">{{ block.settings.text }}</div>
+                  <div class="easy-steps-info-text rte">{{ block.settings.text }}</div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
                   <a
@@ -211,7 +217,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.multicolumn.name",
+  "name": "Easy steps section",
   "class": "section",
   "tag": "section",
   "disabled_on": {
@@ -221,15 +227,8 @@
     {
       "type": "inline_richtext",
       "id": "title",
-      "default": "t:sections.multicolumn.settings.title.default",
-      "label": "t:sections.multicolumn.settings.title.label"
+      "label": "Title"
     },
-    {
-      "type": "inline_richtext",
-      "id": "post-head",
-      "label": "Post title heading"
-    },
-    
     {
       "type": "select",
       "id": "heading_size",
@@ -264,15 +263,15 @@
       "options": [
         {
           "value": "third",
-          "label": "t:sections.multicolumn.settings.image_width.options__1.label"
+          "label": "Third"
         },
         {
           "value": "half",
-          "label": "t:sections.multicolumn.settings.image_width.options__2.label"
+          "label": "Half"
         },
         {
           "value": "full",
-          "label": "t:sections.multicolumn.settings.image_width.options__3.label"
+          "label": "Full"
         }
       ],
       "default": "full",
@@ -411,61 +410,75 @@
       "default": 36
     },
     {
-      "type": "checkbox",
-      "id": "include-custom-style",
-      "label": "add custom styling to custom section",
-      "default" :false
+        "type": "checkbox",
+        "id": "include-custom-style",
+        "label": "add custom styling to easy steps",
+        "default" :false
     },
     {
-      "type": "color",
-      "id": "post-heading-color",
-      "label": "Post head color",
+        "type": "color",
+        "id": "section-bg-color",
+        "label": "Section background color",
     },
     {
-      "type": "color",
-      "id": "card-bg-color",
-      "label": "card background color",
+        "type": "color",
+        "id": "easy-step-heading-color",
+        "label": "Easy step color",
+    },
+    {
+        "type": "text",
+        "id": "easy-subhead-text",
+        "label": "Easy subhead text",
+    },
+    {
+        "type": "color",
+        "id": "card-count-text-color",
+        "label": "Card count text color",
+    },
+    {
+        "type": "color",
+        "id": "card-count-bg-color",
+        "label": "Card count background color",
     },
     
+   
   ],
   "blocks": [
     {
       "type": "column",
-      "name": "t:sections.multicolumn.blocks.column.name",
+      "name": "Column",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+          "label": "Column Image"
         },
         {
           "type": "inline_richtext",
           "id": "title",
-          "default": "t:sections.multicolumn.blocks.column.settings.title.default",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+          "label": "Title Text"
         },
         {
           "type": "richtext",
           "id": "text",
-          "default": "t:sections.multicolumn.blocks.column.settings.text.default",
-          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+          "label": "Text"
         },
         {
           "type": "text",
           "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+          "label": "Link Label"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+          "label": "Link"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Easy steps section",
       "blocks": [
         {
           "type": "column"

@@ -1,0 +1,73 @@
+.easy-steps-section{
+    background-image: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Rectangle_148720.png?v=1728977062');
+}
+.easy-steps-list .easy-step-card{
+    background: none !important;
+    
+}
+.easy-step-head-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0 !important;
+}
+.easy-step-head-main .easy-step-head {
+    line-height: 0.75;
+    font-size: 44px;
+    font-family: 'Normal';
+}
+.easy-step-head-main .easy-subhead {
+    font-size: 44px;
+    font-style: italic;
+    font-family: 'Medium';
+}
+.easy-steps-info .easy-steps-count-head {
+    width: 26px;
+    height: 26px;
+    border-radius: 44px;
+    text-align: center;
+}
+
+.easy-step-card .easy-steps-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.easy-steps-info .easy-steps-info-text {
+    font-size: 24px;
+}
+.easy-step-card, .easy-step-card-media{
+    margin: 5px !important;
+}
+@media screen and (max-width:980px) {
+    .easy-step-card {
+        width: 100%;
+        margin: auto !important;
+    }
+    .easy-steps-list{
+        width: 30% !important;
+    }
+    .easy-steps-info .easy-steps-info-text{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:767px) {
+    .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead{
+        font-size:28px;
+    }
+    .easy-step-card {
+        width: 300px;
+        margin: auto !important;
+    }
+    .easy-steps-info {
+        padding: 10px;
+    }
+    .easy-steps-list{
+        width: 100% !important;
+    }
+    .easy-steps-info .easy-steps-info-text{
+        font-size: 20px;
+    }
+}

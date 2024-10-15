@@ -7,9 +7,42 @@
   {
     color: {{ section.settings.heading-three-color }};
   }
-
+  #shopify-section-{{ section.id }} .banner-button-main .banner-btn-link
+  { 
+    background-color: {{ section.settings.banner-btn-bg-color }}
+  }
+  #shopify-section-{{ section.id }} .banner-tag-main
+  {
+    background-color:  {{ section.settings.banner-tag-bg-color }}
+  }
+  #shopify-section-{{ section.id }} .banner-tag-main .banner-tag-text
+  {
+    color: {{ section.settings.banner-tag-text-color }}
+  }
   </style>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const bannerImage = document.querySelector(".banner-image-wrapper img");
+    
+      function updateBannerImage() {
+        if (window.innerWidth <= 767) {
+          const mobileImageSrc = bannerImage.getAttribute("data-mobile-src");
+          bannerImage.setAttribute("src", mobileImageSrc);
+        } else {
+          const desktopImageSrc = bannerImage.getAttribute("src");
+          bannerImage.setAttribute("src", desktopImageSrc);
+        }
+      }
+    
+      // Run the function on page load
+      updateBannerImage();
+    
+      // Run the function on window resize
+      window.addEventListener("resize", updateBannerImage);
+    });
+    
+  </script>
 {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
@@ -65,10 +98,10 @@
 
 <div
   id="Banner-{{ section.id }}"
-  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  class="custom-banner banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
 >
   {%- if section.settings.image != blank -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="image-banner-media banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
         if section.settings.image_2 != blank
@@ -92,7 +125,34 @@
           sizes: sizes,
           widths: widths,
           fetchpriority: fetch_priority
-      }}
+        }}
+        {{
+          section.settings.mobile-first-image
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.image.width,
+            height: image_height,
+            class:'mobile-image-class',
+            sizes: sizes,
+            widths: widths,
+            fetchpriority: fetch_priority
+          }}
+
+
+      {% if section.settings.add-second-image != blank %}
+        <div class="second-image-wrapper">
+          {{
+            section.settings.add-second-image
+            | image_url: width: 300
+            | image_tag:
+              width: 250, 
+              height: 250, 
+              class: 'second-image',
+              alt: 'Secondary Image'
+          }}
+        </div>
+      {% endif %}
+
     </div>
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
@@ -127,7 +187,7 @@
       }}
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="banner-content-custom  banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -141,6 +201,9 @@
               </h2>
             {% endif %}
             {% if block.settings.add-custom-banner-heading %}
+              <div class="banner-tag-main">
+                <span class="banner-tag-text"> {{ block.settings.banner-tag }} </span>
+              </div>
               <div class="banner-heading-main">
                 <span class="banner-head-one">{{ block.settings.heading-one }} </span>
                 <span class="banner-head-two"> {{ block.settings.heading-two }}  <span class="banner-head-three">{{ block.settings.heading-three }} </span></span>
@@ -154,7 +217,7 @@
             </div>
           {%- when 'buttons' -%}
             <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+              class="banner-button-main banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
               {{ block.shopify_attributes }}
             >
               {%- if block.settings.button_label_1 != blank -%}
@@ -164,7 +227,7 @@
                   {% else %}
                     href="{{ block.settings.button_link_1 }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  class="banner-btn-link button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
                 >
                   {{- block.settings.button_label_1 | escape -}}
                 </a>
@@ -182,6 +245,15 @@
                 </a>
               {%- endif -%}
             </div>
+
+            {% if block.settings.add-text-below-button %}
+              <div class="text-below-btn-main">
+                {% if  block.settings.button-post-image != blank %}
+                  <img class="image-below-button" src="{{ block.settings.button-post-image | image_url }}" width= "" height="" alt="Custom Image">
+                {% endif %}
+                <span class="text-below-button">{{ block.settings.text-below-button }}</span>
+              </div>
+            {% endif %}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -215,9 +287,21 @@
     },
     {
       "type": "image_picker",
+      "id": "mobile-first-image",
+      "label": "Mobile first image"
+    },
+    {
+      "type": "image_picker",
       "id": "image_2",
       "label": "t:sections.image-banner.settings.image_2.label"
     },
+    {
+      "type": "image_picker",
+      "id": "add-second-image",
+      "label": "Add second image inside first image"
+    },
+    
+    
     {
       "type": "range",
       "id": "image_overlay_opacity",
@@ -392,7 +476,22 @@
       "id": "show_text_below",
       "default": true,
       "label": "t:sections.image-banner.settings.show_text_below.label"
-    }
+    },
+    {
+      "type": "color",
+      "id": "banner-btn-bg-color",
+      "label": "Banner button background color"
+    },
+    {
+      "type": "color",
+      "id": "banner-tag-bg-color",
+      "label": "Banner tag background color"
+    },
+    {
+      "type": "color",
+      "id": "banner-tag-text-color",
+      "label": "Banner tag text color"
+    },
   ],
   "blocks": [
     {
@@ -426,6 +525,11 @@
           "type": "text",
           "id": "heading-three",
           "label": "Custom heading three"
+        },
+        {
+          "type": "text",
+          "id": "banner-tag",
+          "label": "Banner tag"
         },
         {
           "type": "inline_richtext",
@@ -536,7 +640,25 @@
           "id": "button_style_secondary_2",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
-        }
+        },
+        {
+          "type": "checkbox",
+          "id": "add-text-below-button",
+          "default": false,
+          "label": "Add text below button"
+        },
+        {
+          "type": "image_picker",
+          "id": "button-post-image",
+          "label": "Button post image"
+        },
+        {
+          "type": "text",
+          "id": "text-below-button",
+          "label": "Text below button"
+        },
+         
+
       ]
     }
   ],

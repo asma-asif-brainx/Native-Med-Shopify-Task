@@ -4,6 +4,12 @@
     font-size: 60px;
     font-family: 'Normal';
 }
+.banner-heading-main .banner-head-one{
+    line-height: 1.15;
+}
+.banner-heading-main .banner-head-two{
+    line-height: 1.45;
+}
 .banner-heading-main  .banner-head-three{
     font-family: 'Medium';
     font-style: italic;
@@ -17,5 +23,99 @@
 .banner-text-main  .banner-text{
     font-size: 15px;
     font-family: 'Normal';
-    
 }
+.banner-text-main {
+    margin-top: 0 !important;
+}
+.banner-button-main .banner-btn-link::after{
+    box-shadow: none !important;
+}
+.banner-button-main .banner-btn-link
+{
+    border-radius: 24px;
+    width: 100%;
+    font-size: 14px;
+}
+.banner-button-main{
+    max-width: 444px;
+    width: 100%;
+}
+.text-below-btn-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.text-below-btn-main .text-below-button{
+    font-size: 16px;
+    font-family: 'Normal';
+}
+.banner-tag-main{
+    border-radius: 50px;
+    width: 225px;
+    height: 30px;
+    margin: auto;
+}
+.banner-tag-main .banner-tag-text{
+    font-family: 'Medium';
+    font-size: 14px;
+    margin: 10px;
+}
+.second-image-wrapper img{
+    position: relative;
+    left: 75%;
+    z-index: 10;
+    top: 8%;
+}
+.mobile-image-class{
+    display: none !important;
+}
+
+@media screen and (max-width: 980px) {
+    .second-image-wrapper img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner-heading-main .banner-head-one, .banner-heading-main .banner-head-two{
+        font-size: 35px;
+    }
+    .banner-tag-main .banner-tag-text{
+        font-size: 8.25px;
+    }
+    .banner-text-main .banner-text{
+        font-size: 9px;
+    }
+    .banner-button-main .banner-btn-link{
+        font-size: 8.25px;
+    }
+    .text-below-btn-main .text-below-button{
+        font-size: 9.42px;
+    }
+    .text-below-btn-main .image-below-button{
+        width: 65px;
+        height: 13px;
+    }
+    .text-below-btn-main{
+        gap: 10px;
+    }
+    .banner-button-main{
+        max-width: 31rem !important; 
+    }
+    .banner-button-main .banner-btn-link{
+        min-height: 28px;
+        height: 100%;
+    }
+    .mobile-image-class{
+        display: block !important;
+    }
+    .banner-content-custom{
+        height: 700px; 
+    }
+    .second-image-wrapper{
+        display: none !important;
+    }
+}
+

@@ -1,0 +1,67 @@
+<!--  Access custom stylesheet-->
+{% if section.settings.include-custom-style  %}
+    {{ 'marquee.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  <style>
+    #shopify-section-{{ section.id }} .marquee-section{
+        background-color: {{ section.settings.marquee-bg-color }}
+    }
+    </style>
+
+
+<div class="marquee-section">
+    <div class="marquee-blocks">
+      {% for block in section.blocks %}
+        <div class="marquee-block">
+            {% if block.settings.image != blank %}
+                <img class="marque-image" src="{{ block.settings.image | image_url }}" width= "" height="" alt="Custom Image">
+            {% endif %}
+            <span class="marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+  {% schema %}
+{
+  "name": "Marquee",
+  "settings": [
+    {
+        "type": "checkbox",
+        "id": "include-custom-style",
+        "label": "add custom styling to marquee",
+        "default" :false
+    },
+    {
+        "type": "color",
+        "id": "marquee-bg-color",
+        "label": "Marquee background color",
+    }
+  ],
+  "blocks": [
+    {
+      "type": "marquee_block",
+      "name": "Marquee Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

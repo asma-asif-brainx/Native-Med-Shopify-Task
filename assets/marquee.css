@@ -1,0 +1,38 @@
+.marquee-block .marque-image{
+    width: 45px;
+    height: 45PX;
+}
+.marquee-block .marquee-text{
+    font-size: 18px;
+}
+.marquee-blocks .marquee-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+.marquee-section .marquee-blocks{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+  .marquee-section {
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-blocks {
+    position: absolute;
+    width: 200%;
+    height: 50px;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-text {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  @keyframes marquee {
+    0% { left: 0; }
+    100% { left: -50%; }
+  }

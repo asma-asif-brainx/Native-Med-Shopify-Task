@@ -11,6 +11,7 @@
             "heading-one": "Weight Loss",
             "heading-two": "Backed By",
             "heading-three": "Science",
+            "banner-tag": "#1 WEIGHT LOSS PROGRAM",
             "heading": "Browse our latest products",
             "heading_size": "h0"
           }
@@ -25,12 +26,15 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "GET QUALIFIED TODAY",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "add-text-below-button": true,
+            "button-post-image": "shopify:\/\/shop_images\/Group_1000007101.svg",
+            "text-below-button": "Rated 4.8\/5.0 (Over 20,000 happy customers)"
           }
         }
       },
@@ -43,8 +47,10 @@
         "include-custom-style": true,
         "heading-three-color": "#7e4c8b",
         "image": "shopify:\/\/shop_images\/banner-women.jpg",
+        "mobile-first-image": "shopify:\/\/shop_images\/Frame_15.png",
+        "add-second-image": "shopify:\/\/shop_images\/callus855-850-8585_1_1.png",
         "image_overlay_opacity": 40,
-        "image_height": "large",
+        "image_height": "adapt",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -52,40 +58,289 @@
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": false,
+        "banner-btn-bg-color": "#7e4c8b",
+        "banner-tag-bg-color": "#ffffff",
+        "banner-tag-text-color": "#7e4c8b"
       }
     },
-    "featured_collection": {
+    "marquee_Lfcerh": {
+      "type": "marquee",
+      "blocks": {
+        "marquee_block_t3fQEq": {
+          "type": "marquee_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014493_2.png",
+            "text": "US-LINCENSED HEALTHCARE PROVIDERS"
+          }
+        },
+        "marquee_block_C9KDpi": {
+          "type": "marquee_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014488.png",
+            "text": "FREE ONLINE CONSULTATION"
+          }
+        },
+        "marquee_block_nUB96x": {
+          "type": "marquee_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014490.png",
+            "text": "FREE, DISCREET SHIPPING"
+          }
+        },
+        "marquee_block_BdcXVj": {
+          "type": "marquee_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014492.png",
+            "text": "FDA-APPROVED PHARMACIES"
+          }
+        }
+      },
+      "block_order": [
+        "marquee_block_t3fQEq",
+        "marquee_block_C9KDpi",
+        "marquee_block_nUB96x",
+        "marquee_block_BdcXVj"
+      ],
+      "settings": {
+        "include-custom-style": true,
+        "marquee-bg-color": "#fbf9f9"
+      }
+    },
+    "featured_collection_dzhJFR": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Recognizing",
+        "post-head-two": "Your",
+        "post-head-three": "Uniqueness",
+        "heading-italic-color": "#7e4c8b",
+        "post-subheading": "We prioritize convenience and affordability, guaranteeing easy access to top-quality care that's always within your reach.",
+        "product-card-bg-color": "#fbf9f9",
+        "first-product-card-bg-color": "#7e4c8b",
+        "card-text-color": "#ffffff",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "native-med",
+        "products_to_show": 12,
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "image_ratio": "portrait",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "include-custom-style": true
+      }
+    },
+    "easy_steps_custom_section_iA6VXw": {
+      "type": "easy-steps-custom-section",
+      "blocks": {
+        "column_XDHLEF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014498.png",
+            "title": "1",
+            "text": "<p>Online Medical Form<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UrtwG8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014499.png",
+            "title": "2",
+            "text": "<p>Telehealth Call<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_LpWDQW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1000014500.png",
+            "title": "3",
+            "text": "<p>Receive Medication<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_XDHLEF",
+        "column_UrtwG8",
+        "column_LpWDQW"
+      ],
+      "settings": {
+        "title": "Start Losing Weight In",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "include-custom-style": true,
+        "section-bg-color": "#ebe5ed",
+        "easy-step-heading-color": "#7e4c8b",
+        "easy-subhead-text": "3-Easy Steps",
+        "card-count-text-color": "#ffffff",
+        "card-count-bg-color": "#7e4c8b"
+      }
+    },
+    "multicolumn_K8U4z7": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_mPFxqB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_4.png",
+            "title": "Appetite Suppression",
+            "text": "<p>Known for its effective hunger craving reduction<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AjirFN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_5.png",
+            "title": "Improves‍ ‍Health",
+            "text": "<p>Incorporating nutrition, physical activity and mental well-being<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_hdA8Fw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_6.png",
+            "title": "Lose‍ ‍Weight",
+            "text": "<p>Begin your transformation, shedding 23% of weight in no time<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_drLaEr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_7.png",
+            "title": "No Hidden Fees",
+            "text": "<p>Includes Provider & Medication  No Fees – No Insurance Needed<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_mPFxqB",
+        "column_AjirFN",
+        "column_hdA8Fw",
+        "column_drLaEr"
+      ],
+      "settings": {
+        "title": "Why Choose",
+        "post-head": "Nativemed",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "include-custom-style": true,
+        "post-heading-color": "#7e4c8b",
+        "card-bg-color": "#fbf9f9"
+      }
+    },
+    "image_with_text_M4RThx": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption_nnmNbi": {
+          "type": "caption",
+          "settings": {
+            "caption": "POPULAR",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_FnnrCM": {
+          "type": "heading",
+          "settings": {
+            "add-img-text-div": true,
+            "sublock-one-image": "shopify:\/\/shop_images\/fast-delivery_1_1_1.png",
+            "sublock-two-image": "shopify:\/\/shop_images\/consultant_1_1.png",
+            "sublock-three-image": "shopify:\/\/shop_images\/certificate_1_1.png",
+            "sublock-four-image": "shopify:\/\/shop_images\/stamp_1_1.png",
+            "sublock-one-text": "Free, discreet shipping",
+            "sublock-two-text": "Free online consultation",
+            "sublock-three-text": "US-licensed healthcare providers",
+            "sublock-four-text": "FDA-approved pharmacies",
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "button_zq8gYy": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET STARTED",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_nnmNbi",
+        "heading_FnnrCM",
+        "button_zq8gYy"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Downloader.la-6586c2dd1eee9_2x_1.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "include-custom-style": true
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "marquee_Lfcerh",
+    "featured_collection_dzhJFR",
+    "easy_steps_custom_section_iA6VXw",
+    "multicolumn_K8U4z7",
+    "image_with_text_M4RThx"
   ]
 }
