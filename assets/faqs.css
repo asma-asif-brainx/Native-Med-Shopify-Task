@@ -1,0 +1,49 @@
+.custom-icon-caret{
+    height: 35px !important;
+    top: calc(50% - 1.7rem) !important;
+}
+.detail-faq , .faq-accordion{
+    border-radius: 10px;
+}
+.heading-main-faqs{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.heading, .post-head{
+    margin: 0 !important;
+    font-size: 38px;
+}
+.post-head{
+    font-style: italic;
+}
+
+.faq-caption{
+    font-size: 12px;
+    height: 25px;
+    width: 230px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion-title {
+    text-decoration: none !important;
+}
+.collapsible-content summary:hover {
+    background: none !important;
+}
+
+@media screen and (max-width:767px) {
+    .heading, .post-head{
+        font-size: 22px;
+    }
+    .faq-caption {
+        font-size: 10px;
+        height: 24px;
+        width: 184px;
+    }
+    
+}

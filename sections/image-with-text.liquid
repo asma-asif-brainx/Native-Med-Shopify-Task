@@ -3,8 +3,27 @@
   {{ 'image-with-text-custom.css' | asset_url | stylesheet_tag }}
 {% endif %}
 <style>
-  #shopify-section-{{ section.id }} {
-   
+  #shopify-section-{{ section.id }} .main-section{
+    background-color: {{ section.settings.section-bg-color }}
+  }
+
+  #shopify-section-{{ section.id }} .section-content .caption-text{
+    color: {{ section.settings.caption-text-color }};
+    background-color: {{ section.settings.caption-bg-color }}
+  }
+
+  #shopify-section-{{ section.id }} .first-heading .heading-two, .second-heading .heading-three 
+  {
+    color: {{ section.settings.heading-color }}
+  }
+
+  #shopify-section-{{ section.id }} .image-div{
+    background-color: {{ section.settings.image-bg-color }};
+  }
+
+  #shopify-section-{{ section.id }} .custom-button{
+    background-color: {{ section.settings.button-bg-color }};
+    color: {{ section.settings.button-text-color }}
   }
 
 </style>
@@ -35,13 +54,13 @@
   endif
 -%}
 
-<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <div class="page-width">
+<div class="main-section section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="custom-page-width page-width">
     <div class="image-with-text image-with-text--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <div class="image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
-        <div class="image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
+      <div class="grid-custom image-with-text__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} image-with-text__grid--reverse{% endif %}">
+        <div class="image-media-main image-with-text__media-item image-with-text__media-item--{{ section.settings.desktop_image_width }} image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
           <div
-            class="image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
+            class="image-with-text-media image-with-text__media image-with-text__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} image-with-text__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
             {% if section.settings.height == 'adapt' and section.settings.image != blank %}
               style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
             {% endif %}
@@ -70,46 +89,62 @@
             {%- endif -%}
           </div>
         </div>
-        <div class="image-with-text__text-item grid__item">
+        <div class="text-grid image-with-text__text-item grid__item">
           <div
             id="ImageWithText--{{ section.id }}"
-            class="image-with-text__content image-with-text__content--{{ section.settings.desktop_content_position }} image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} image-with-text__content--{{ section.settings.height }} content-container{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}"
+            class="section-content image-with-text__content image-with-text__content--{{ section.settings.desktop_content_position }} image-with-text__content--desktop-{{ section.settings.desktop_content_alignment }} image-with-text__content--mobile-{{ section.settings.mobile_content_alignment }} image-with-text__content--{{ section.settings.height }} content-container{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}"
           >
             {%- for block in section.blocks -%}
               {% case block.type %}
                 {%- when 'heading' -%}
-                  <h2
-                    class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ block.settings.heading }}
-                  </h2>
+
+                <div class="heading-main">
+                  <div class="first-heading">
+                    <h2
+                      class="heading-one image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {{ block.settings.heading }}
+                    </h2>
+
+                    {% if block.settings.heading-two !=blank %}
+                      <h2  class="heading-two">{{ block.settings.heading-two }}</h2>
+                    {% endif %}
+                  </div>
+
+                  {% if  block.settings.heading-three != blank  and  block.settings.heading-four != blank  %}
+                    <div class="second-heading">
+                      <h2  class="heading-three">{{ block.settings.heading-three }}</h2>
+                      <h2  class="heading-four">{{ block.settings.heading-four }}</h2>
+                    </div>
+                 {% endif %}
+                </div>
 
                   {% if block.settings.add-img-text-div %}
-                    <div>
-                      <div>
+                    <div class="text-img-main">
+                      <div class="text-img-block-one">
                         {% if block.settings.sublock-one-image != blank %}
-                          <img class="" src="{{ block.settings.sublock-one-image | image_url }}" width= "" height="" alt="Custom Image">
+                          <div class="image-div"><img class="sublock-one-image" src="{{ block.settings.sublock-one-image | image_url }}" width= "" height="" alt="Custom Image"></div>
                         {% endif %}
-                        <span>{{ block.settings.sublock-one-text }}</span>
+                        <span class="sublock-one-text">{{ block.settings.sublock-one-text }}</span>
                       </div>
-                      <div>
+                      <div class="text-img-block-two">
                         {% if block.settings.sublock-two-image != blank %}
-                          <img class="" src="{{ block.settings.sublock-two-image | image_url }}" width= "" height="" alt="Custom Image">
+                          <div class="image-div"><img class="sublock-two-image" src="{{ block.settings.sublock-two-image | image_url }}" width= "" height="" alt="Custom Image"></div>
                         {% endif %}
-                        <span>{{ block.settings.sublock-two-text }}</span>
+                        <span class="sublock-two-text">{{ block.settings.sublock-two-text }}</span>
                       </div>
-                      <div>
+                      <div class="text-img-block-three">
                         {% if block.settings.sublock-three-image != blank %}
-                          <img class="" src="{{ block.settings.sublock-three-image | image_url }}" width= "" height="" alt="Custom Image">
+                          <div class="image-div"><img class="sublock-three-image" src="{{ block.settings.sublock-three-image | image_url }}" width= "" height="" alt="Custom Image"></div>
                         {% endif %}
-                        <span>{{ block.settings.sublock-three-text }}</span>
+                        <span class="sublock-three-text">{{ block.settings.sublock-three-text }}</span>
                       </div>
-                      <div>
+                      <div class="text-img-block-four">
                         {% if block.settings.sublock-four-image != blank %}
-                          <img class="" src="{{ block.settings.sublock-four-image | image_url }}" width= "" height="" alt="Custom Image">
+                          <div class="image-div"><img class="sublock-four-image" src="{{ block.settings.sublock-four-image | image_url }}" width= "" height="" alt="Custom Image"></div>
                         {% endif %}
-                        <span>{{ block.settings.sublock-four-text }}</span>
+                        <span class="sublock-four-text">{{ block.settings.sublock-four-text }}</span>
                       </div>
 
                     </div>
@@ -117,7 +152,7 @@
 
                 {%- when 'caption' -%}
                   <p
-                    class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
+                    class="caption-text image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
                     {{ block.shopify_attributes }}
                   >
                     {{ block.settings.caption | escape }}
@@ -134,7 +169,7 @@
                       {% else %}
                         href="{{ block.settings.button_link }}"
                       {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                      class="custom-button button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
                       {{ block.shopify_attributes }}
                     >
                       {{ block.settings.button_label | escape }}
@@ -369,7 +404,45 @@
       "id": "include-custom-style",
       "label": "add custom styling to image with text section",
       "default" :false
-    }
+    },
+    {
+      "type": "color",
+      "id": "section-bg-color",
+      "label": "Section background color",
+    },
+    {
+      "type": "color",
+      "id": "caption-text-color",
+      "label": "caption text color",
+    },
+    {
+      "type": "color",
+      "id": "caption-bg-color",
+      "label": "caption background color",
+    },
+    {
+      "type": "color",
+      "id": "heading-color",
+      "label": "Heading color",
+    },
+    {
+      "type": "color",
+      "id": "image-bg-color",
+      "label": "Image background color",
+    },
+    {
+      "type": "color",
+      "id": "button-bg-color",
+      "label": "Button background color",
+    },
+    {
+      "type": "color",
+      "id": "button-text-color",
+      "label": "Button text color",
+    },
+
+    
+   
   ],
   "blocks": [
     {
@@ -429,6 +502,21 @@
           "id": "heading",
           "default": "t:sections.image-with-text.blocks.heading.settings.heading.default",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading-two",
+          "label": "Heading two"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading-three",
+          "label": "Heading three"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading-four",
+          "label": "Heading four"
         },
         {
           "type": "select",

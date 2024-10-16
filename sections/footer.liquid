@@ -1,3 +1,15 @@
+<!--  Access custom stylesheet-->
+{% if section.settings.include-custom-style  %}
+  {{ 'footer-custom.css' | asset_url | stylesheet_tag }}
+{% endif %}
+<style>
+  #shopify-section-{{ section.id }} .custom-footer{
+    background-color: {{ section.settings.footer-bg-color }}
+  }
+
+</style>
+
+
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
@@ -27,7 +39,7 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="custom-footer footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -76,8 +88,9 @@
                 {% endif %}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                  <h2 class="custom-footer-heading footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
                 {%- endif -%}
+               
 
                 {%- case block.type -%}
                   {%- when '@app' -%}
@@ -86,6 +99,14 @@
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
                     </div>
+
+                    {% if block.settings.add-phone %}
+                      <div class="phone-main">
+                          <span class="phone-text">{{ block.settings.phone-text }}</span>
+                         {% if block.settings.ph-img != blank  %} <img class="phone-img" src="{{ block.settings.ph-img | image_url }}" width="" height="" alt="Custom Image">{% endif %}
+                      </div>
+                    {% endif %}
+
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
                       <ul class="footer-block__details-content list-unstyled">
@@ -93,7 +114,7 @@
                           <li>
                             <a
                               href="{{ link.url }}"
-                              class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              class="custom-link-footer link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
                             >
                               {{ link.title | escape }}
                             </a>
@@ -373,6 +394,24 @@
       "name": "t:sections.footer.blocks.text.name",
       "settings": [
         {
+          "type": "checkbox",
+          "id": "add-phone",
+          "label": "Add phone",
+          "default" :false
+        },
+
+        {
+          "type": "text",
+          "id": "phone-text",
+          "label": "Add phone text",
+        },
+        {
+          "type": "image_picker",
+          "id": "ph-img",
+          "label": "Add phone image",
+        },
+
+        {
           "type": "inline_richtext",
           "id": "heading",
           "default": "t:sections.footer.blocks.text.settings.heading.default",
@@ -554,7 +593,20 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
+    },
+    {
+      "type": "checkbox",
+      "id": "include-custom-style",
+      "label": "add custom styling to footer",
+      "default" :false
+    },
+    {
+      "type": "color",
+      "id": "footer-bg-color",
+      "label": "Footer bg color",
+    },
+
+    
   ],
   "default": {
     "blocks": [

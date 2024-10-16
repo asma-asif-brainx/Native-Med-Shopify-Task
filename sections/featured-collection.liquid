@@ -15,9 +15,37 @@
   }
 
   #shopify-section-{{ section.id }} .collection-product-grid .list-grid-item:first-child .card-info .card-head
-   ,  .collection-product-grid .list-grid-item:first-child .regular-price .regular-price-item  {
+   ,  .collection-product-grid .list-grid-item:first-child .regular-price .regular-price-item, .collection-product-grid .list-grid-item:first-child .subtitle-metafield  {
     color: {{ section.settings.card-text-color }};
   }
+  #shopify-section-{{ section.id }} .product-custom-button-wrapper .product-custom-button, .get-started-link{
+    color:  {{ section.settings.card-button-text-color }} !important;
+  }
+
+  #shopify-section-{{ section.id }}  .collection-product-grid .list-grid-item:first-child .product-custom-button-wrapper .product-custom-button {
+    background-color: {{ section.settings.card-text-color }};
+  }
+  #shopify-section-{{ section.id }} .sold-out-badge{
+    background-color: {{ section.settings.sold-out-badge-bg-color }};
+    color:  {{ section.settings.sold-out-badge-text-color }} ;
+
+  }
+  #shopify-section-{{ section.id }} .coming-soon-badge {
+    background-color: {{ section.settings.coming-soon-badge-bg-color }};
+    color:  {{ section.settings.coming-soon-badge-text-color }} ;
+
+  }
+
+  #shopify-section-{{ section.id }} .in-stock-badge {
+    background-color: {{ section.settings.in-stock-badge-bg-color }};
+    color:  {{ section.settings.in-stock-badge-text-color }};
+  }
+
+  #shopify-section-{{ section.id }}  .prev-btn, .next-btn{
+    background-color: {{ section.settings.slider-button-bg-color }} !important ;
+  }
+
+
 </style>
 
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
@@ -122,7 +150,7 @@
       {%- endif -%}
     </div>
 
-    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    <slider-component class="custom-slider-mobile-gutter slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <ul
         id="Slider-{{ section.id }}"
         data-id="{{ section.id }}"
@@ -183,19 +211,25 @@
         {%- endfor -%}
       </ul>
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider-buttons">
+        <div class="custom-slider-buttons-main slider-buttons">
           <button
             type="button"
-            class="slider-button slider-button--prev"
+            class="prev-btn slider-button slider-button--prev"
             name="previous"
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
+            {% if section.settings.show-built-in-prev-icon  %}
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            {% endif %}
+
+            {% if section.settings.show-custom-prev-icon  %}
+              {%- render 'prev-arrow-icon' -%}
+            {% endif %}
           </button>
-          <div class="slider-counter caption">
+          <div class="slider-counter-custom slider-counter caption">
             <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>
             <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -203,14 +237,21 @@
           </div>
           <button
             type="button"
-            class="slider-button slider-button--next"
+            class="next-btn slider-button slider-button--next"
             name="next"
             aria-label="{{ 'general.slider.next_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
+            {% if section.settings.show-built-in-next-icon  %}
+              <span class="svg-wrapper">
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            {% endif %}
+
+            {% if section.settings.show-custom-next-icon  %}
+              {%- render 'next-arrow-icon' -%}
+            {% endif %}
+
           </button>
         </div>
       {%- endif -%}
@@ -573,6 +614,86 @@
       "label": "add custom styling to featured collection",
       "default" :false
     },
+    {
+      "type": "color",
+      "id": "card-button-text-color",
+      "label": "Card button text color",
+    },
+    {
+      "type": "checkbox",
+      "id": "add-custom-button",
+      "label": "add custom button in product card ",
+      "default" :false
+    },
+    {
+      "type": "checkbox",
+      "id": "add-metafield",
+      "label": "Add product subtitle metafield ",
+      "default" :false
+    },
+    {
+      "type": "color",
+      "id": "sold-out-badge-bg-color",
+      "label": "Sold out badge bg color",
+    },
+    {
+      "type": "color",
+      "id": "sold-out-badge-text-color",
+      "label": "Sold out badge text color",
+    },
+    {
+      "type": "color",
+      "id": "in-stock-badge-bg-color",
+      "label": "In stock badge bg color",
+    },
+    {
+      "type": "color",
+      "id": "in-stock-badge-text-color",
+      "label": "In stock badge text color",
+    },
+    {
+      "type": "color",
+      "id": "coming-soon-badge-bg-color",
+      "label": "Coming soon badge bg color",
+    },
+    {
+      "type": "color",
+      "id": "coming-soon-badge-text-color",
+      "label": "Coming soon badge text color",
+    },
+    {
+      "type": "checkbox",
+      "id": "show-built-in-prev-icon",
+      "label": "Show built in slider prev icon ",
+      "default" :true
+    },
+    {
+      "type": "checkbox",
+      "id": "show-built-in-next-icon",
+      "label": "Show built in slider next icon ",
+      "default" :true
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show-custom-prev-icon",
+      "label": "Show custom slider prev icon ",
+      "default" : false
+    },
+    
+    {
+      "type": "checkbox",
+      "id": "show-custom-next-icon",
+      "label": "Show custom slider next icon ",
+      "default" : false
+    },
+    {
+      "type": "color",
+      "id": "slider-button-bg-color",
+      "label": "slider button background color",
+    },
+    
+
   ],
   "presets": [
     {

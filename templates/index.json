@@ -140,7 +140,21 @@
         "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36,
-        "include-custom-style": true
+        "include-custom-style": true,
+        "card-button-text-color": "#2d2d2d",
+        "add-custom-button": true,
+        "add-metafield": true,
+        "sold-out-badge-bg-color": "#ffffff",
+        "sold-out-badge-text-color": "#2d2d2d",
+        "in-stock-badge-bg-color": "#dbeddb",
+        "in-stock-badge-text-color": "#1c3829",
+        "coming-soon-badge-bg-color": "#fdecc8",
+        "coming-soon-badge-text-color": "#402c1b",
+        "show-built-in-prev-icon": false,
+        "show-built-in-next-icon": false,
+        "show-custom-prev-icon": true,
+        "show-custom-next-icon": true,
+        "slider-button-bg-color": "#e1cccc"
       }
     },
     "easy_steps_custom_section_iA6VXw": {
@@ -299,8 +313,11 @@
             "sublock-two-text": "Free online consultation",
             "sublock-three-text": "US-licensed healthcare providers",
             "sublock-four-text": "FDA-approved pharmacies",
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Sustainable",
+            "heading-two": "Weight",
+            "heading-three": "Loss",
+            "heading-four": "Based On Biology",
+            "heading_size": "h2"
           }
         },
         "button_zq8gYy": {
@@ -320,7 +337,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Downloader.la-6586c2dd1eee9_2x_1.png",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
@@ -331,7 +348,165 @@
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36,
-        "include-custom-style": true
+        "include-custom-style": true,
+        "section-bg-color": "#ebe5ed",
+        "caption-text-color": "#2d2d2d",
+        "caption-bg-color": "#e1cccc",
+        "heading-color": "#7e4c8b",
+        "image-bg-color": "#ffffff",
+        "button-bg-color": "#7e4c8b",
+        "button-text-color": "#ffffff"
+      }
+    },
+    "collapsible_content_AX3hy3": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_PHmeP8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_gCCbDN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_4KWafM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_3aCeyJ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "icon": "check_mark",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PHmeP8",
+        "collapsible_row_gCCbDN",
+        "collapsible_row_4KWafM",
+        "collapsible_row_3aCeyJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "caption": "FREQUENTLY ASKED QUESTIONS",
+        "heading": "Collapsible content",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "fa_qs_tYzQkW": {
+      "type": "FAQs",
+      "blocks": {
+        "collapsible_row_JWfAzX": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does it work?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3DM7KR": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long does medication take to ship?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TwL7Ri": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you accept insurance?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PQgzAN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are these products safe?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_c8eikU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I cancel at anytime?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yFypmp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does the weight loss program include?",
+            "icon": "none",
+            "row_content": "<p>NativeMed aims to go beyond being a typical Telehealth platform while keeping it simple for our clients. Our treatment process consists of three straightforward steps:<br\/><\/p><ol><li>Fill out our patient questionnaire.<\/li><li>Connect with your healthcare provider via a Telehealth appointment.<\/li><li>Receive prescribed medication overnight from a pharmacy provider.<\/li><\/ol>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_JWfAzX",
+        "collapsible_row_3DM7KR",
+        "collapsible_row_TwL7Ri",
+        "collapsible_row_PQgzAN",
+        "collapsible_row_c8eikU",
+        "collapsible_row_yFypmp"
+      ],
+      "settings": {
+        "add-custom-arrow-icon": true,
+        "add-built-in-arrow-icon": false,
+        "caption": "FREQUENTLY ASKED QUESTIONS",
+        "heading": "Your Questions,",
+        "post-head": "Answered",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "include-custom-style": true,
+        "accordion-closed-bg-color": "#fbf9f9",
+        "accordion-open-bg-color": "#f3eaea",
+        "color-post-head-count": "#7e4c8b",
+        "color-text": "#ffffff"
       }
     }
   },
@@ -341,6 +516,8 @@
     "featured_collection_dzhJFR",
     "easy_steps_custom_section_iA6VXw",
     "multicolumn_K8U4z7",
-    "image_with_text_M4RThx"
+    "image_with_text_M4RThx",
+    "collapsible_content_AX3hy3",
+    "fa_qs_tYzQkW"
   ]
 }

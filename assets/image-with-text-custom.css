@@ -1,0 +1,183 @@
+.section-content .main-section{
+    background-image: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Rectangle_148720.png?v=1728977062');
+}
+.main-section{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.section-content .caption-text{
+    font-size: 14px;
+    font-family: 'Normal';
+    width: 87px;
+    height: 32px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-content .first-heading,.section-content .second-heading{
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    margin: 0;
+}
+.first-heading .heading-one, .first-heading .heading-two, .second-heading .heading-three , .second-heading .heading-four{
+    margin: 0;
+    font-size: 36px;
+}
+
+.heading-main{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.custom-page-width{
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    max-width: 100%;
+}
+
+.text-img-block-one .sublock-one-image, .text-img-block-two .sublock-two-image,
+.text-img-block-three .sublock-three-image, .text-img-block-four .sublock-four-image{
+    width: 30px;
+}
+.image-div{
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
+.text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text{
+    font-size: 16px;
+    font-family: 'Normal';
+    width: 178px;
+    display: block;
+}
+
+.text-img-block-one, .text-img-block-two , .text-img-block-three,  .text-img-block-four {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.text-img-main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.image-media-main .image-with-text-media{
+    border: none !important;
+}
+.image-media-main{
+    width: 45% !important;
+}
+
+.custom-button::after{
+    box-shadow: none !important;
+}
+
+.custom-button {
+    width: 249px;
+    border-radius: 24px;
+    height: 47px;
+    font-size: 14px;
+}
+
+.section-content{
+    width: 704px;
+}
+@media screen and (max-width:1024px) {
+    .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text,
+    .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text {
+        font-size: 10px;
+        width: 118px;
+    }
+    .section-content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:980px) {
+    .grid-custom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .grid-custom .image-media-main {
+        width: 100% !important;
+    }
+    .text-grid{
+        width: 100% !important;
+        max-width: 100% !important;
+        align-items: center;
+    }
+    .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
+    .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text {
+        width: 199px;
+        font-size: 18px;
+    }
+    .image-div {
+        width: 75px;
+        height: 75px;
+    }
+    .text-img-block-one .sublock-one-image, .text-img-block-two .sublock-two-image, .text-img-block-three .sublock-three-image, .text-img-block-four .sublock-four-image {
+        width: 38px;
+    }
+    .image-media-main{
+        width: 100% !important;
+    }
+    
+
+    
+}
+
+@media screen and (max-width:767px) {
+    .first-heading .heading-one, .first-heading .heading-two, .second-heading .heading-three, .second-heading .heading-four{
+        font-size: 30px;
+    }
+    .text-img-main{
+        align-items: center;
+    }
+    .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
+    .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text{
+        width: 118px;
+        font-size: 10px;
+    }
+
+    .text-img-block-one .sublock-one-image, .text-img-block-two .sublock-two-image,
+    .text-img-block-three .sublock-three-image, .text-img-block-four .sublock-four-image{
+        width: 20px;
+    }
+    .image-div{
+        width: 37px;
+        height: 37px;
+    }
+    .section-content{
+        padding: 30px !important;
+        padding-right: 0 !important;
+    }
+    .section-content .caption-text{
+        font-size: 10px;
+        width: 70px;
+        height: 22px;
+    }
+    .heading-main{
+        margin-top: 5px !important;
+    }
+    .custom-button {
+        width: 170px;
+        min-height: 12px;
+        max-height: 33px;
+        font-size: 10px;
+    }
+   
+}

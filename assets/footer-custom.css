@@ -1,0 +1,10 @@
+.custom-footer{
+    background-image: url(/cdn/shop/files/Rectangle_148720.png?v=1728977062);
+}
+
+.custom-link-footer{
+    text-decoration: none !important;
+}
+.custom-link-footer:hover{
+    text-decoration: underline !important;
+}

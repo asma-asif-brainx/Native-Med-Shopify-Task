@@ -1,29 +1,38 @@
 <!--  Access custom stylesheet-->
 {% if section.settings.include-custom-style  %}
     {{ 'marquee.css' | asset_url | stylesheet_tag }}
-  {% endif %}
-  <style>
+{% endif %}
+<style>
     #shopify-section-{{ section.id }} .marquee-section{
         background-color: {{ section.settings.marquee-bg-color }}
     }
-    </style>
+ </style>
 
 
-<div class="marquee-section">
+ <div class="marquee-section">
     <div class="marquee-blocks">
       {% for block in section.blocks %}
         <div class="marquee-block">
-            {% if block.settings.image != blank %}
-                <img class="marque-image" src="{{ block.settings.image | image_url }}" width= "" height="" alt="Custom Image">
-            {% endif %}
-            <span class="marquee-text">{{ block.settings.text }}</span>
+          {% if block.settings.image != blank %}
+            <img class="marque-image" src="{{ block.settings.image | image_url }}" width="" height="" alt="Custom Image">
+          {% endif %}
+          <span class="marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+      <!-- Duplicating the same blocks to create the loop effect -->
+      {% for block in section.blocks %}
+        <div class="marquee-block">
+          {% if block.settings.image != blank %}
+            <img class="marque-image" src="{{ block.settings.image | image_url }}" width="" height="" alt="Custom Image">
+          {% endif %}
+          <span class="marquee-text">{{ block.settings.text }}</span>
         </div>
       {% endfor %}
     </div>
   </div>
+  
 
-
-  {% schema %}
+{% schema %}
 {
   "name": "Marquee",
   "settings": [

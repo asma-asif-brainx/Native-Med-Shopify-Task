@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: 'thin'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Poppins-Light.ttf?v=1728909327') format('truetype'); 
+  font-weight: normal; 
+}
+@font-face {
   font-family: 'Normal'; 
   src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Poppins-Regular.ttf?v=1728909328') format('truetype'); 
   font-weight: normal; 

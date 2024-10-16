@@ -1,0 +1,21 @@
+{% assign product_quantity =  card_product.available %}
+{% assign product_tag_coming_soon = false %}
+
+{%- for tag in card_product.tags -%}
+  {%- if tag == "coming soon" -%}
+    {% assign product_tag_coming_soon = true %}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="product-custom-button-wrapper">
+  {% if product_quantity == false -%}
+    <button class="product-custom-button sold-out" disabled>SOLD OUT</button>
+   {% endif %}
+  {% if  product_tag_coming_soon != true and product_quantity %}
+    <button class="product-custom-button get-started"> <a href="{{ card_product.url }}" class="get-started-link">GET STARTED</a> </button>
+  {% endif %}
+
+  {% if product_tag_coming_soon %}
+      <button class="product-custom-button coming-soon" disabled>COMING SOON</button>
+  {% endif %}
+</div>
