@@ -1,10 +1,10 @@
 .marquee-block .marque-image {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 }
 
 .marquee-block .marquee-text {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .marquee-blocks .marquee-block {
@@ -19,12 +19,12 @@
     flex-direction: row;
     gap: 30px;
     position: absolute;
-    width: max-content; /* Make the width dynamic */
+    width: 100%; 
     animation: marquee 20s linear infinite;
 }
 
 .marquee-section {
-    height: 55px;
+    height: 60px;
     overflow: hidden;
     position: relative;
     white-space: nowrap;
@@ -33,6 +33,6 @@
 }
 
 @keyframes marquee {
-    0% { transform: translateX(0); } /* Start from the right */
-    100% { transform: translateX(-50%); } /* Move to the left */
+    0% { transform: translateX(0); } 
+    100% { transform: translateX(-100%); } 
 }

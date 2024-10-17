@@ -25,6 +25,9 @@
     margin: 0;
     font-size: 36px;
 }
+.first-heading .heading-two, .second-heading .heading-three{
+    font-style: italic;
+}
 
 .heading-main{
     display: flex;

@@ -34,7 +34,9 @@
             "button_style_secondary_2": false,
             "add-text-below-button": true,
             "button-post-image": "shopify:\/\/shop_images\/Group_1000007101.svg",
-            "text-below-button": "Rated 4.8\/5.0 (Over 20,000 happy customers)"
+            "text-below-button-pre": "Rated 4.8\/5.0",
+            "text-below-button": "(Over 20,000 happy customers)",
+            "link-below-button": "shopify:\/\/collections\/all"
           }
         }
       },
@@ -50,7 +52,7 @@
         "mobile-first-image": "shopify:\/\/shop_images\/Frame_15.png",
         "add-second-image": "shopify:\/\/shop_images\/callus855-850-8585_1_1.png",
         "image_overlay_opacity": 40,
-        "image_height": "adapt",
+        "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -324,7 +326,7 @@
           "type": "button",
           "settings": {
             "button_label": "GET STARTED",
-            "button_link": "",
+            "button_link": "shopify:\/\/collections\/native-med",
             "button_style_secondary": false
           }
         }
@@ -491,7 +493,7 @@
         "add-built-in-arrow-icon": false,
         "caption": "FREQUENTLY ASKED QUESTIONS",
         "heading": "Your Questions,",
-        "post-head": "Answered",
+        "post-head": "Answered.",
         "heading_size": "h1",
         "heading_alignment": "left",
         "layout": "row",

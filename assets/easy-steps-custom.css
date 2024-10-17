@@ -14,19 +14,20 @@
 }
 .easy-step-head-main .easy-step-head {
     line-height: 0.75;
-    font-size: 44px;
+    font-size: 40px;
     font-family: 'Normal';
 }
 .easy-step-head-main .easy-subhead {
-    font-size: 44px;
+    font-size: 40px;
     font-style: italic;
-    font-family: 'Medium';
+    font-family: 'Normal';
 }
 .easy-steps-info .easy-steps-count-head {
     width: 26px;
     height: 26px;
     border-radius: 44px;
     text-align: center;
+    margin: 0 !important;
 }
 
 .easy-step-card .easy-steps-info{
@@ -34,9 +35,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px ;
 }
 .easy-steps-info .easy-steps-info-text {
-    font-size: 24px;
+    font-size: 20px;
 }
 .easy-step-card, .easy-step-card-media{
     margin: 5px !important;
@@ -52,22 +54,25 @@
     .easy-steps-info .easy-steps-info-text{
         font-size: 16px;
     }
+    .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead{
+        font-size: 34px;
+    }
 }
 @media screen and (max-width:767px) {
     .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead{
-        font-size:28px;
+        font-size:25px;
     }
     .easy-step-card {
         width: 300px;
         margin: auto !important;
     }
     .easy-steps-info {
-        padding: 10px;
+        padding: 5px !important;
     }
     .easy-steps-list{
         width: 100% !important;
     }
     .easy-steps-info .easy-steps-info-text{
-        font-size: 20px;
+        font-size: 18px;
     }
 }

@@ -5,16 +5,25 @@
   <style>
     #shopify-section-{{ section.id }} .faq-accordion{
         background-color: {{ section.settings.accordion-closed-bg-color }};
+        border: 1px solid {{ section.settings.accordion-open-bg-color }};
     }
 
-    #shopify-section-{{ section.id }} .detail-faq{
+    #shopify-section-{{ section.id }} .accordion .detail-faq[open]{
         background-color: {{ section.settings.accordion-open-bg-color }};
     }
 
-    #shopify-section-{{ section.id }} .custom-accordion-content ol li::marker{
+    #shopify-section-{{ section.id }} .custom-accordion-content ol li::before {
         background-color: {{ section.settings.color-post-head-count }};
         color: {{ section.settings.color-text }}
     }
+    #shopify-section-{{ section.id }} .accordion details[open]>summary .icon-caret ,
+     .accordion details[open]>summary .icon-caret rect{
+        background-color: {{ section.settings.color-post-head-count }};
+    }
+
+    #shopify-section-{{ section.id }} .accordion details[open]>summary .icon-caret path{
+       fill:  {{ section.settings.color-text }};
+   }
 
     #shopify-section-{{ section.id }} .post-head{
         color: {{ section.settings.color-post-head-count }}
@@ -45,7 +54,7 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
     <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
-      <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
+      <div class="faqs-content-wrapper {% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
         <div
           class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           style="text-align: {{ section.settings.heading_alignment }};"

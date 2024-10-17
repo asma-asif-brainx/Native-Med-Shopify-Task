@@ -10,8 +10,13 @@
           "settings": {
             "add-phone": false,
             "phone-text": "",
+            "social-media-text": "",
+            "add-social-media-icons": false,
+            "logo-img": "shopify:\/\/shop_images\/Asset_2_1_svg.svg",
+            "sub-logo-img-one": "shopify:\/\/shop_images\/image_52_15bcfb88-48e2-4da5-915b-4af77235d91b.png",
+            "sub-logo-img-two": "shopify:\/\/shop_images\/Group_1000014473.png",
             "heading": "",
-            "subtext": "<p>No Diet. No Exercise.Ditch The Weight, Gain Control.<\/p>"
+            "subtext": "<p>No Diet. No Exercise. Ditch The Weight, Gain Control.<\/p>"
           }
         },
         "link_list_ia8a6U": {
@@ -33,7 +38,12 @@
           "settings": {
             "add-phone": true,
             "phone-text": "+1 (833) 850-8585",
-            "phone-image": "shopify:\/\/shop_images\/Vector_3.png",
+            "ph-img": "shopify:\/\/shop_images\/Vector_3.svg",
+            "social-media-text": "Follow Us:",
+            "add-social-media-icons": true,
+            "fb-img": "shopify:\/\/shop_images\/facebook.png",
+            "insta-img": "shopify:\/\/shop_images\/instagram.png",
+            "tictoc-img": "shopify:\/\/shop_images\/tiktok.png",
             "heading": "Get in touch",
             "subtext": ""
           }
@@ -59,7 +69,10 @@
         "padding_top": 36,
         "padding_bottom": 36,
         "include-custom-style": true,
-        "footer-bg-color": "#f3eaea"
+        "footer-bg-color": "#f3eaea",
+        "add-custom-footer-copyright-text": true,
+        "add-built-in-footer-copyright-text": false,
+        "shop-name": "© 2024 NativeMed"
       }
     }
   },

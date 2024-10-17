@@ -251,7 +251,8 @@
                 {% if  block.settings.button-post-image != blank %}
                   <img class="image-below-button" src="{{ block.settings.button-post-image | image_url }}" width= "" height="" alt="Custom Image">
                 {% endif %}
-                <span class="text-below-button">{{ block.settings.text-below-button }}</span>
+                <span class="text-below-button-pre">{{ block.settings.text-below-button-pre }}</span>
+                <a class="text-link-btn" href="{{ block.settings.link-below-button }}"><span class="text-below-button">{{ block.settings.text-below-button }}</span></a>
               </div>
             {% endif %}
         {%- endcase -%}
@@ -651,12 +652,22 @@
           "type": "image_picker",
           "id": "button-post-image",
           "label": "Button post image"
+        }, {
+          "type": "text",
+          "id": "text-below-button-pre",
+          "label": "Pre text below button"
         },
         {
           "type": "text",
           "id": "text-below-button",
           "label": "Text below button"
         },
+        {
+          "type": "url",
+          "id": "link-below-button",
+          "label": "Link below button"
+        },
+        
          
 
       ]

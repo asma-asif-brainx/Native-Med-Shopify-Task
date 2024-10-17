@@ -13,6 +13,7 @@
     margin-bottom: 0 !important;
     font-size: 35px;
     font-family: 'Normal';
+    margin-top: 0 !important;
 }
 .heading-parts-main .post-head-three{
     font-style: italic;
@@ -59,7 +60,7 @@
     font-size: 12px;
     font-family: 'Normal';
 }
-.media img{
+.featured-media img{
     object-fit: contain !important;
 }
 .badge-card .custom-badge{
@@ -88,6 +89,7 @@
   .subtitle-metafield{
     font-size: 14px;
     font-family: 'thin';
+    line-height: 1.4;
   }
   .heading-link::after{
     position: unset !important;
@@ -195,4 +197,21 @@
         width: calc(100% - 53px);
         left: 20px;
     }
+    .badge-card .custom-badge {
+        top: -132% !important;
+        right: -3% !important;
+        height: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .subtitle-metafield {
+        font-size: 8px;
+    }
+    .card-info .card-head {
+        font-size: 12px;
+    }
+    .product-custom-button-wrapper .product-custom-button {
+        height: 19px !important;
+        font-size: 10px;
+    }    
 }

@@ -9,7 +9,7 @@
   #shopify-section-{{ section.id }} .custom-cart-count-bubble {
     background-color: {{ section.settings.cart-count-bg-color }};
   }
-  #shopify-section-{{ section.id }} .header-list-items .header-nav-items-link:active
+  #shopify-section-{{ section.id }} .header-list-items:active
   {
     background-color: {{  section.settings.header-active-item-bg-color }}
   }
@@ -149,7 +149,7 @@
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+        <h1 class="header-main-heading header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header-logo-link header__heading-link link link--text focus-inset">
             {%- if settings.logo != blank -%}

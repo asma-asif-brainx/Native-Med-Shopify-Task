@@ -28,6 +28,24 @@
           <span class="marquee-text">{{ block.settings.text }}</span>
         </div>
       {% endfor %}
+      <!-- Duplicating the same blocks to create the loop effect -->
+      {% for block in section.blocks %}
+        <div class="marquee-block">
+          {% if block.settings.image != blank %}
+            <img class="marque-image" src="{{ block.settings.image | image_url }}" width="" height="" alt="Custom Image">
+          {% endif %}
+          <span class="marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+      <!-- Duplicating the same blocks to create the loop effect -->
+      {% for block in section.blocks %}
+        <div class="marquee-block">
+          {% if block.settings.image != blank %}
+            <img class="marque-image" src="{{ block.settings.image | image_url }}" width="" height="" alt="Custom Image">
+          {% endif %}
+          <span class="marquee-text">{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
     </div>
   </div>
   

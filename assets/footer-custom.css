@@ -8,3 +8,113 @@
 .custom-link-footer:hover{
     text-decoration: underline !important;
 }
+.phone-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.media-icons-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.footer-block-content-subtext{
+    width: 190px !important;
+    font-size: 12px;
+    font-family: 'thin';
+}
+.logo-subimg-main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img{
+    width: 135px;
+    height: 85px;
+}
+.social-text{
+    font-size: 13px;
+    font-family: 'thin';
+}
+.phone-text{
+    text-decoration: underline;
+    font-size: 13px;
+    font-family: 'thin';
+    text-underline-offset: 4px;
+}
+.custom-footer-heading {
+    font-size: 20px;
+    font-family: 'Normal';
+}
+.custom-link-footer{
+    font-size: 13px !important;
+    font-family: 'thin';
+}
+.copyright__content a{
+    display: none;
+}
+.custom-text-copyright{
+    font-size: 16px;
+    font-family: 'Normal';
+}
+.footer-custom-content-bottom {
+    border-top: 0.75px solid !important;
+}
+.footer-text-block:first-child{
+    max-width: 20% !important;
+    min-width: 35% !important;
+}
+.footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
+    max-width: 19% !important;
+    min-width: 19% !important;
+    width: 100%;
+}
+
+@media screen and (min-width: 750px){
+.footer__content-top .grid {
+    row-gap: 0rem !important;
+}
+}
+@media screen and (max-width:980px) {
+    custom-link-footer {
+        font-size: 10px !important;
+    }
+    .phone-text {
+        font-size: 8px;
+    }
+    .phone-img{
+        width: 15px;
+    }
+    footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
+        max-width: 29% !important;
+    }
+    .footer-text-block:first-child {
+        min-width: 37% !important
+    }
+    
+}
+
+@media screen and (max-width:767px) {
+    .footer-text-block:first-child {
+        max-width: 100% !important;
+        min-width: 100% !important;
+    }
+    .footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
+        max-width: 45% !important;
+    }
+    .custom-link-footer {
+        font-size: 10px!important;
+    }
+    .custom-footer-heading{
+        font-size: 14px !important;
+    }
+    .footer-block-wrap{
+        display: flex !important;
+    }
+    .footer-text-block {
+        margin-bottom: 0 !important;
+    }
+}

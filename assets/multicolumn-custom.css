@@ -4,29 +4,30 @@
     align-items: center;
 }
 .custom-title-wrapper .custom-title{
-    font-size: 44px;
-    font-family: 'Normal';
+    font-size: 40px;
+    font-family: 'thin';
 }
 .custom-title-wrapper .custom-post-title{
-    font-size: 44px;
-    font-family: 'Medium';
+    font-size: 40px;
+    font-family: 'Normal';
     font-style: italic;
 }
 .custom-multicolumn-card{
-    height: 231px !important; 
+    height: 200px !important; 
 }
 .custom-multicolumn-card .custom-multicolumn-card-image-wrapper{
     width: 55px;
     margin: auto;
+    padding-top: 15px !important;
 }
 .card-info-main .card-info-heading{
     font-size: 18px;
-    font-family: 'Medium';
+    font-family: 'Normal';
 }
 .card-info-main .card-description{
     font-family: 'Normal';
     text-align: center;
-    font-size: 14px;
+    font-size: 11px;
 }
 .card-info-main{
     display: flex;
@@ -35,9 +36,10 @@
     justify-content: center;
     padding-left: 10px !important;
     padding-right: 10px !important;
-    max-width: 280px;
+    max-width: 240px;
     width: 100%;
     margin: auto;
+    padding:  10px !important;
 }
 .page-width-custom{
     padding-left: 10px !important;
@@ -47,6 +49,9 @@
     border-radius: 16px;
     background: none !important;
 }
+.custom-card-list{
+    max-width: 23% !important;
+}
 .custom-multicolumn-card-image-wrapper .media{
     margin-bottom: 8px;
 }
@@ -54,12 +59,22 @@
     border: 1px solid #00000014;
 }
 
+.multicolumn-list{
+    gap: 25px;
+}
 @media screen and (max-width:980px) {
     .multicolumn-list .custom-card-list{
         width: 40%;
+        max-width: unset !important;
     }
     .multicolumn-list{
         gap: 20px;
+    }
+    .card-info-main .card-description {
+        font-size: 14px;
+    }
+    .card-info-main {
+        max-width: 282px;
     }
 }
 
@@ -71,11 +86,15 @@
         font-size: 24px;
     }
     .custom-multicolumn-card .card-info-main{
-        width: 280px;
+        max-width: 290px;
         margin: auto;
     }
     .multicolumn-list .custom-card-list{
         width: 100%;
+    }
+    .card-info-main .card-description
+    {
+        font-size: 14px;
     }
    
 }

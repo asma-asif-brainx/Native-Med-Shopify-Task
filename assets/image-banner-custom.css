@@ -42,23 +42,32 @@
 .banner-button-main{
     max-width: 444px;
     width: 100%;
+    margin-top: 1.5rem !important; 
 }
 .text-below-btn-main{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
+    margin-top: 1.5rem !important;
 }
-.text-below-btn-main .text-below-button{
-    font-size: 16px;
-    font-family: 'Normal';
+.text-link-btn{
+    color: unset;
+    line-height: 0.1;
+}
+.text-below-btn-main .text-below-button-pre, .text-below-btn-main .text-below-button{
+    font-size: 15px;
+    font-family: 'thin';
 }
 .banner-tag-main{
     border-radius: 50px;
     width: 225px;
     height: 30px;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .banner-tag-main .banner-tag-text{
     font-family: 'Medium';
@@ -75,6 +84,23 @@
     display: none !important;
 }
 
+@media screen and (max-width: 1280px){
+    .banner--medium:not(.banner--adapt) {
+        min-height: 67rem !important;
+    }
+}
+@media screen and (min-width: 1281px){
+    .banner--medium:not(.banner--adapt) {
+        min-height: 75rem !important;
+    }
+}
+
+@media screen and (min-width: 1551px){
+    .banner--medium:not(.banner--adapt) {
+        min-height: 95rem !important;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .second-image-wrapper img{
         width: 150px;
@@ -83,7 +109,7 @@
 }
 @media screen and (max-width: 767px) {
     .banner-heading-main .banner-head-one, .banner-heading-main .banner-head-two{
-        font-size: 35px;
+        font-size: 33px;
     }
     .banner-tag-main .banner-tag-text{
         font-size: 8.25px;
@@ -94,7 +120,7 @@
     .banner-button-main .banner-btn-link{
         font-size: 8.25px;
     }
-    .text-below-btn-main .text-below-button{
+    .text-below-btn-main .text-below-button-pre, .text-below-btn-main .text-below-button{
         font-size: 9.42px;
     }
     .text-below-btn-main .image-below-button{
@@ -102,10 +128,10 @@
         height: 13px;
     }
     .text-below-btn-main{
-        gap: 10px;
+        gap: 8px;
     }
     .banner-button-main{
-        max-width: 31rem !important; 
+        max-width: 30rem !important; 
     }
     .banner-button-main .banner-btn-link{
         min-height: 28px;
@@ -120,5 +146,10 @@
     .second-image-wrapper{
         display: none !important;
     }
+    .banner-tag-main {
+        width: 150px;
+        height: 20px;
+    }
 }
+
 

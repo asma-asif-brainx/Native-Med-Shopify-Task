@@ -3,10 +3,12 @@
     font-size: 16px;
     font-family: 'Normal';
 }
-.header-list-items .header-nav-items-link:active{
-    width: 68px;
-    height: 33px;
-    border-radius: 60px;
+.header-list-items:active{
+    width: 68px !important;
+    height: 33px !important;
+    border-radius: 60px !important;
+    display: flex !important;
+    transform: translateY(6px) !important;
 }
 .header-logo-link .header-logo-image-wrapper{
     width: 108px;
@@ -29,4 +31,10 @@
 .header-nav-items-link:hover, .header-nav-items-link .header-active-menu-item:hover{
     text-decoration: none !important;
     list-style-type: none !important;
+}
+
+@media screen  and (max-width:980px){
+    .header-main-heading{
+        margin-left:  60px !important;
+    }
 }
