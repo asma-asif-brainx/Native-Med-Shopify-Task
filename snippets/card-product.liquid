@@ -163,7 +163,7 @@
                   id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                   class="custom-badge in-stock-badge badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
                 >
-                  In stock
+                  In Stock
                 </span>
               {% endif %}
             {% endif %}
@@ -186,7 +186,10 @@
               class="heading-link full-unstyled-link"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
-              {{ card_product.title | escape }}
+              <p class="pre-head-metafield">
+                {{ card_product.metafields.custom.pre_head_title }}
+              </p>
+               {{ card_product.title | escape }}
             </a>
           </h3>
 

@@ -5,7 +5,11 @@
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     font-size: 60px;
-    font-family: 'Normal';
+    font-family: 'satoshi-regular';
+    line-height: 1.05 !important;
+}
+.section-content{
+    justify-content: center !important;
 }
 .banner-heading-main .banner-head-one{
     line-height: 1.15;
@@ -14,7 +18,7 @@
     line-height: 1.45;
 }
 .banner-heading-main  .banner-head-three{
-    font-family: 'Medium';
+    font-family: 'satoshi-medium';
     font-style: italic;
 }
 .banner-heading-main{
@@ -26,6 +30,7 @@
 .banner-text-main  .banner-text{
     font-size: 15px;
     font-family: 'Normal';
+    margin-top: 15px;
 }
 .banner-text-main {
     margin-top: 0 !important;
@@ -78,7 +83,7 @@
     position: relative;
     left: 75%;
     z-index: 10;
-    top: 8%;
+    top: 5%;
 }
 .mobile-image-class{
     display: none !important;
@@ -106,10 +111,17 @@
         width: 150px;
         height: 150px;
     }
+    .second-image-wrapper img {
+        left: 81%;
+        top: 15%;
+    }
+    .banner-heading-main .banner-head-one, .banner-heading-main .banner-head-two{
+        font-size: 55px;
+    }
 }
 @media screen and (max-width: 767px) {
     .banner-heading-main .banner-head-one, .banner-heading-main .banner-head-two{
-        font-size: 33px;
+        font-size: 35px;
     }
     .banner-tag-main .banner-tag-text{
         font-size: 8.25px;
@@ -137,6 +149,9 @@
         min-height: 28px;
         height: 100%;
     }
+    .image-banner-media img:first-child{
+        display: none !important;
+    }
     .mobile-image-class{
         display: block !important;
     }
@@ -153,3 +168,12 @@
 }
 
 
+@media screen and (max-width: 330px) {
+    .text-below-btn-main .text-below-button-pre, .text-below-btn-main .text-below-button
+    {
+        font-size: 6.42px;
+    }
+    .text-below-button{
+        line-height: 1;
+    }
+}

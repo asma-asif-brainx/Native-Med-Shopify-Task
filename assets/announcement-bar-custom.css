@@ -37,3 +37,13 @@
         height: 12px;
     }
 }
+
+@media screen and (max-width:330px) {
+    .announcement-message-main-div .announce-image {
+        width: 7px;
+        height: 7px;
+    }
+    .announcement-message-main-div .announcement-message-text-main {
+        font-size: 7px !important;
+    }
+}

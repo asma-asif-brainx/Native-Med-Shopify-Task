@@ -112,6 +112,7 @@
     "featured_collection_dzhJFR": {
       "type": "featured-collection",
       "settings": {
+        "pre-head-metafield-product": "#161616",
         "title": "Recognizing",
         "post-head-two": "Your",
         "post-head-three": "Uniqueness",
@@ -146,8 +147,8 @@
         "card-button-text-color": "#2d2d2d",
         "add-custom-button": true,
         "add-metafield": true,
-        "sold-out-badge-bg-color": "#ffffff",
-        "sold-out-badge-text-color": "#2d2d2d",
+        "sold-out-badge-bg-color": "#2d2d2d",
+        "sold-out-badge-text-color": "#ffffff",
         "in-stock-badge-bg-color": "#dbeddb",
         "in-stock-badge-text-color": "#1c3829",
         "coming-soon-badge-bg-color": "#fdecc8",

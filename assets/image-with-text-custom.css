@@ -7,8 +7,8 @@
 }
 .section-content .caption-text{
     font-size: 14px;
-    font-family: 'Normal';
-    width: 87px;
+    font-family: 'satoshi-medium';
+    width: 94px;
     height: 32px;
     border-radius: 50px;
     display: flex;
@@ -17,16 +17,25 @@
 }
 .section-content .first-heading,.section-content .second-heading{
     display: flex;
-    gap: 5px;
     flex-direction: row;
     margin: 0;
 }
+.section-content .first-heading{
+    gap: 5px;
+}
+.section-content .second-heading{
+    gap: 10px;
+}
 .first-heading .heading-one, .first-heading .heading-two, .second-heading .heading-three , .second-heading .heading-four{
     margin: 0;
-    font-size: 36px;
+    font-size: 40px;
+}
+.first-heading .heading-one,  .second-heading .heading-four{
+  font-family: 'satoshi-regular'
 }
 .first-heading .heading-two, .second-heading .heading-three{
     font-style: italic;
+   font-family: 'satoshi-medium'
 }
 
 .heading-main{
@@ -61,8 +70,8 @@
 }
 .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
 .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text{
-    font-size: 16px;
-    font-family: 'Normal';
+    font-size: 18px;
+    font-family: 'satoshi-regular';
     width: 178px;
     display: block;
 }
@@ -90,10 +99,11 @@
 }
 
 .custom-button {
-    width: 249px;
+    width: 240px;
     border-radius: 24px;
     height: 47px;
     font-size: 14px;
+    font-family: 'satoshi-medium';
 }
 
 .section-content{
@@ -102,11 +112,14 @@
 @media screen and (max-width:1024px) {
     .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text,
     .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text {
-        font-size: 10px;
-        width: 118px;
+        font-size: 14px;
+        width: 140px;
     }
     .section-content {
         width: 100%;
+    }
+    .custom-button {
+        width: 206px;
     }
 }
 
@@ -126,7 +139,7 @@
     .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
     .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text {
         width: 199px;
-        font-size: 18px;
+        font-size: 20px;
     }
     .image-div {
         width: 75px;
@@ -138,7 +151,9 @@
     .image-media-main{
         width: 100% !important;
     }
-    
+    .custom-button {
+        width: 264px;
+    }
 
     
 }
@@ -153,7 +168,7 @@
     .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, 
     .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text{
         width: 118px;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .text-img-block-one .sublock-one-image, .text-img-block-two .sublock-two-image,
@@ -177,10 +192,25 @@
         margin-top: 5px !important;
     }
     .custom-button {
-        width: 170px;
+        width: 160px;
         min-height: 12px;
-        max-height: 33px;
+        max-height: 31px;
         font-size: 10px;
     }
+    .section-content{
+        margin-top: 18px;
+    }
    
+}
+
+
+@media screen and (max-width:330px) {
+    .first-heading .heading-one, .first-heading .heading-two, .second-heading .heading-three, .second-heading .heading-four{
+        font-size:21px
+    }
+    .text-img-block-one .sublock-one-text, .text-img-block-two .sublock-two-text, .text-img-block-three .sublock-three-text, .text-img-block-four .sublock-four-text
+    {
+        width: 73px;
+        font-size: 10px;
+    }    
 }

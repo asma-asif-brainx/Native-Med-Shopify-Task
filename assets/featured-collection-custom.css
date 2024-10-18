@@ -3,16 +3,21 @@
     flex-direction: row;
     gap: 5px;
 }
+.pre-head-metafield{
+    margin: 0 !important;
+}
 .heading-parts-main .post-head-two , .heading-parts-main .post-head-three{
     margin: 0;
-    font-size: 35px;
-    font-family: 'Normal';
+    font-size: 38px;
+    font-family: 'satoshi-regular';
 }
-
+.heading-parts-main .post-head-three{
+    font-family: 'satoshi-medium';
+}
 .collection-title-wrapper .featured-heading-title{
     margin-bottom: 0 !important;
-    font-size: 35px;
-    font-family: 'Normal';
+    font-size: 38px;
+    font-family: 'satoshi-regular';
     margin-top: 0 !important;
 }
 .heading-parts-main .post-head-three{
@@ -20,8 +25,8 @@
 }
 .collection-title-wrapper .post-head-text{
     font-size: 18px;
-    font-family: 'Normal';
-    width: 700px;
+    font-family: 'inter-regular';
+    width: 600px;
     display: block;
 }
 .collection-title-wrapper {
@@ -29,9 +34,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-top: 15px;
 }
 .collection-product-grid{
     width: 90%;
+    gap: 22px;
 }
 .collection-product-grid .list-grid-item {
     min-width: 320px !important;
@@ -51,20 +58,22 @@
 .title-main-block{
     width: 500px;
 }
-.card-info .card-head{
-    font-size: 20px;
-    font-family: 'Normal';
+.card-info .card-head, .pre-head-metafield{
+    font-size: 22px;
+    font-family: 'satoshi-medium';
 }
-
+.card-info{
+    padding-top: 0 !important;
+}
 .regular-price .regular-price-item{
-    font-size: 12px;
-    font-family: 'Normal';
+    font-size: 16px;
+    font-family: 'satoshi-medium';
 }
 .featured-media img{
     object-fit: contain !important;
 }
 .badge-card .custom-badge{
-    top: -66% !important;
+    top: -64% !important;
     position: absolute !important;
     right: 0% !important;
 }
@@ -78,6 +87,8 @@
     border-radius: 24px;
     border: 1px solid;
     background:  none;
+    font-family: 'satoshi-medium';
+    font-size: 14px;
 }
 .get-started-link, .get-started-link:hover {
     text-decoration: none !important;
@@ -88,8 +99,9 @@
   }
   .subtitle-metafield{
     font-size: 14px;
-    font-family: 'thin';
+    font-family: 'satoshi-regular';
     line-height: 1.4;
+    width: 210px;
   }
   .heading-link::after{
     position: unset !important;
@@ -99,8 +111,14 @@
   }
   .prev-btn, .next-btn{
     border-radius: 60px;
+    width: 55px !important;
+    height: 55px !important;
   }
 
+   .prev-btn svg, .next-btn svg {
+    width: 34px !important;
+    height: 34px !important;
+   }
 
   .custom-slider-buttons-main{
     position: absolute;
@@ -113,6 +131,10 @@
 
     .prev-btn[disabled], .next-btn[disabled] {
         visibility: hidden;  
+    }
+
+    .collection-title-wrapper {
+        margin-bottom: 4.5rem !important;
     }
 @media screen and (max-width:1024px) {
     .collection-title-wrapper .post-head-text {
@@ -142,27 +164,31 @@
         height: 400px;
     }
 
-    .card-info .card-head{
-        font-size: 14px;
+    .card-info .card-head, .pre-head-metafield{
+        font-size: 16px;
     }
     .subtitle-metafield{
-        font-size: 10px;
-
+        font-size: 12px;
+        width: 180px;
     }
     .regular-price .regular-price-item{
-        font-size: 8px;
+        font-size: 14px;
     }
     .badge-card .custom-badge{
-        top: -115% !important;
+        top: -110% !important;
         position: absolute !important;
         right: 5% !important;
     }
-    .product-custom-button-wrapper .product-custom-button{
-        height: 30px;
+    .product-custom-button-wrapper .product-custom-button {
+        height: 25px;
+        font-size: 12px;
     }
     .custom-slider-buttons-main {
         width: calc(100% - 120px);
         left: 50px;
+    }
+    .collection-title-wrapper {
+        margin-top: 0 !important;
     }
 }
 
@@ -179,8 +205,8 @@
         width: unset !important;
     }
     .collection-title-wrapper .post-head-text{
-        font-size: 9px;
-        width: 320px;
+        font-size: 10px;
+        width: 350px;
     }
     .collection-product-grid .list-grid-item {
         width: 44% !important;
@@ -198,20 +224,50 @@
         left: 20px;
     }
     .badge-card .custom-badge {
-        top: -132% !important;
+        top: -126% !important;
         right: -3% !important;
-        height: 20px;
-        display: flex;
-        align-items: center;
+        height: 16px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 8px;
+        width: 62px !important;
+        padding: 0 !important;
+
     }
     .subtitle-metafield {
-        font-size: 8px;
+        font-size: 10px;
     }
-    .card-info .card-head {
-        font-size: 12px;
+    .card-info .card-head,.pre-head-metafield {
+        font-size: 14px;
     }
     .product-custom-button-wrapper .product-custom-button {
         height: 19px !important;
         font-size: 10px;
     }    
+    .regular-price .regular-price-item {
+        font-size: 12px;
+    }
+    .collection-title-wrapper {
+        margin-bottom: 2.5rem !important;
+    }
+    .prev-btn, .next-btn{
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .prev-btn svg, .next-btn svg {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .collection-product-grid {
+        gap: 15px;
+    }
+}
+@media screen and (max-width:330px) {
+    .subtitle-metafield {
+        width: 162px
+    }
+    .collection-title-wrapper .post-head-text{
+        width: 280px;
+    }
 }

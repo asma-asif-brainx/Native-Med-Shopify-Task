@@ -11,16 +11,17 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 0 !important;
+    margin-top: 18px !important;
 }
 .easy-step-head-main .easy-step-head {
     line-height: 0.75;
     font-size: 40px;
-    font-family: 'Normal';
+    font-family: 'satoshi-regular';
 }
 .easy-step-head-main .easy-subhead {
     font-size: 40px;
     font-style: italic;
-    font-family: 'Normal';
+    font-family: 'satoshi-medium';
 }
 .easy-steps-info .easy-steps-count-head {
     width: 26px;
@@ -39,6 +40,8 @@
 }
 .easy-steps-info .easy-steps-info-text {
     font-size: 20px;
+    margin-top: 4px !important;
+    font-family: 'satoshi-medium';
 }
 .easy-step-card, .easy-step-card-media{
     margin: 5px !important;
@@ -52,15 +55,15 @@
         width: 30% !important;
     }
     .easy-steps-info .easy-steps-info-text{
-        font-size: 16px;
+        font-size: 18px;
     }
     .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead{
-        font-size: 34px;
+        font-size: 36px;
     }
 }
 @media screen and (max-width:767px) {
     .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead{
-        font-size:25px;
+        font-size:28px;
     }
     .easy-step-card {
         width: 300px;
@@ -74,5 +77,13 @@
     }
     .easy-steps-info .easy-steps-info-text{
         font-size: 18px;
+    }
+}
+@media screen and (max-width:330px) {
+    .easy-step-head-main .easy-step-head, .easy-step-head-main .easy-subhead {
+        font-size: 23px;
+    }
+    .easy-steps-info .easy-steps-info-text {
+        font-size: 16px;
     }
 }

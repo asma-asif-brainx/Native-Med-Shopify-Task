@@ -27,6 +27,40 @@
   src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Poppins-Bold.ttf?v=1728909328') format('truetype'); 
 }
 
+@font-face {
+  font-family: 'inter-thin'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Inter-Thin-BETA.otf?v=1729177014') format('truetype'); 
+}
+@font-face {
+  font-family: 'inter-regular'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Inter-Regular.otf?v=1729177014') format('truetype'); 
+}
+@font-face {
+  font-family: 'inter-medium'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Inter-Medium.otf?v=1729177014') format('truetype'); 
+}
+@font-face {
+  font-family: 'inter-bold'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Inter-Bold.otf?v=1729177014') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'satoshi-thin'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Satoshi-Light.otf?v=1729188554') format('truetype'); 
+}
+@font-face {
+  font-family: 'satoshi-regular'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Satoshi-Regular.otf?v=1729188554') format('truetype'); 
+}
+@font-face {
+  font-family: 'satoshi-medium'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Satoshi-Medium.otf?v=1729188554') format('truetype'); 
+}
+@font-face {
+  font-family: 'satoshi-bold'; 
+  src: url('https://cdn.shopify.com/s/files/1/0899/1355/7281/files/Satoshi-Bold.otf?v=1729188554') format('truetype'); 
+}
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);

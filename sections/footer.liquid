@@ -103,6 +103,7 @@
 
                     <div class="footer-block-content-subtext footer-block__details-content rte">
                       {{ block.settings.subtext }}
+
                     </div>
 
                     <div class="logo-subimg-main">
@@ -124,6 +125,7 @@
                       </div>
                     {% endif %}
 
+                    <div class="social-media-text-img-main">
                     {% if block.settings.social-media-text !=blank %}
                       <span class="social-text">{{  block.settings.social-media-text }}</span>
                     {% endif %}
@@ -143,12 +145,12 @@
                       {% endif %}
                     </div>
                     {% endif %}
-
+                  </div>
                     
 
                   {%- when 'link_list' -%}
                     {%- if block.settings.menu != blank -%}
-                      <ul class="footer-block__details-content list-unstyled">
+                      <ul class="footer--list-block footer-block__details-content list-unstyled">
                         {%- for link in block.settings.menu.links -%}
                           <li>
                             <a

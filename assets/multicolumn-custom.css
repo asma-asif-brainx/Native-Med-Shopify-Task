@@ -98,3 +98,12 @@
     }
    
 }
+
+@media screen and (max-width:330px) {
+    .custom-title-wrapper .custom-title, .custom-title-wrapper .custom-post-title {
+        font-size: 18px;
+    }
+    .card-info-main .card-description{
+        font-size: 13px;
+    }
+}

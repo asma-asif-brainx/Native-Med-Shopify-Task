@@ -1,12 +1,14 @@
 .custom-footer{
     background-image: url(/cdn/shop/files/Rectangle_148720.png?v=1728977062);
 }
-
 .custom-link-footer{
     text-decoration: none !important;
 }
 .custom-link-footer:hover{
     text-decoration: underline !important;
+}
+.footer--list-block{
+    margin-bottom: 1rem !important;
 }
 .phone-main{
     display: flex;
@@ -14,6 +16,13 @@
     align-items: center;
     gap: 15px;
 }
+.logo-subimg-main .logo-subimg-one{
+    width: 90px;
+}
+.logo-subimg-main .logo-subimg-two{
+    width: 120px;
+}
+
 .media-icons-main{
     display: flex;
     flex-direction: row;
@@ -22,9 +31,10 @@
 }
 .footer-block-content-subtext{
     width: 190px !important;
-    font-size: 12px;
-    font-family: 'thin';
+    font-size: 14px;
+    font-family: 'satoshi-regular';
 }
+
 .logo-subimg-main{
     display: flex;
     flex-direction: row;
@@ -34,31 +44,36 @@
 .logo-img{
     width: 135px;
     height: 85px;
+    margin-bottom: 7px;
 }
 .social-text{
-    font-size: 13px;
-    font-family: 'thin';
+    font-size: 16px;
+    font-family: 'satoshi-regular';
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 10px;
 }
 .phone-text{
     text-decoration: underline;
-    font-size: 13px;
-    font-family: 'thin';
+    font-size: 16px;
+    font-family: 'satoshi-regular';
     text-underline-offset: 4px;
 }
 .custom-footer-heading {
     font-size: 20px;
-    font-family: 'Normal';
+    font-family: 'satoshi-medium';
+    margin-bottom: 1.55rem !important;
 }
 .custom-link-footer{
-    font-size: 13px !important;
-    font-family: 'thin';
+    font-size: 16px !important;
+    font-family: 'satoshi-regular';
 }
 .copyright__content a{
     display: none;
 }
 .custom-text-copyright{
-    font-size: 16px;
-    font-family: 'Normal';
+    font-size: 16px !important;
+    font-family: 'satoshi-regular';
 }
 .footer-custom-content-bottom {
     border-top: 0.75px solid !important;
@@ -72,29 +87,61 @@
     min-width: 19% !important;
     width: 100%;
 }
+.footer-custom-content-bottom{
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
 
+}
 @media screen and (min-width: 750px){
-.footer__content-top .grid {
-    row-gap: 0rem !important;
+    .footer__content-top .grid {
+        row-gap: 0rem !important;
+    }
 }
+
+@media screen and (min-width: 1024px)
+{
+    .custom-link-footer, .phone-text, .social-text, .footer-block-content-subtext{
+        font-size: 14px !important ;
+    }
 }
+
 @media screen and (max-width:980px) {
-    custom-link-footer {
-        font-size: 10px !important;
+    .custom-link-footer {
+        font-size: 14px !important;
+        padding-bottom: 0 !important;
     }
     .phone-text {
-        font-size: 8px;
+        font-size: 14px;
     }
     .phone-img{
         width: 15px;
     }
-    footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
+    .footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
         max-width: 29% !important;
     }
     .footer-text-block:first-child {
         min-width: 37% !important
     }
-    
+    .social-text{
+        font-size: 14px;
+    }
+    .social-media-text-img-main{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .phone-main, .media-icons-main{
+        gap: 8px;
+    }
+    .custom-text-copyright{
+        font-size: 14px !important;
+    }
+    .logo-subimg-main .logo-subimg-one{
+        width: 70px;
+    }
+    .logo-subimg-main .logo-subimg-two{
+        width: 100px;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -105,16 +152,45 @@
     .footer-text-block.footer-block--menu, .footer-text-block:not(:first-child) {
         max-width: 45% !important;
     }
-    .custom-link-footer {
+    .custom-link-footer, .social-text, .phone-text , .footer-block-content-subtext{
         font-size: 10px!important;
     }
     .custom-footer-heading{
         font-size: 14px !important;
+        margin-bottom: 0.75rem !important;
     }
     .footer-block-wrap{
         display: flex !important;
     }
     .footer-text-block {
         margin-bottom: 0 !important;
+        margin-top: 10px !important;
+    }
+    .footer-block-content-subtext{
+        margin-bottom: 10px !important;
+    }
+    .media-icons-main img{
+        width: 15px;
+    }
+    .custom-text-copyright{
+        font-size: 10px !important;
+    }
+    .custom-link-footer{
+        padding-top: 10px !important;
+    }
+}
+
+@media screen and (max-width:330px) {
+    .custom-link-footer, .social-text, .phone-text, .footer-block-content-subtext {
+        font-size: 8px!important;
+    }
+    .accordion-title {
+        font-size: 12px !important;
+    }
+    .custom-accordion-content {
+        font-size: 12px !important;
+    }
+    .custom-link-footer {
+        padding-top: 7px !important;
     }
 }

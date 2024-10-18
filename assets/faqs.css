@@ -1,9 +1,14 @@
 .custom-icon-caret{
-    height: 35px !important;
-    top: calc(50% - 1.7rem) !important;
+    height: 28px !important;
+    width: 28px !important;
+    top: calc(50% - 1.29rem) !important;
 }
 .detail-faq , .faq-accordion{
     border-radius: 10px;
+}
+.custom-accordion-content{
+    font-size: 16px;
+    font-family: 'inter-regular'
 }
 .heading-main-faqs{
     display: flex;
@@ -14,25 +19,30 @@
 }
 .heading, .post-head{
     margin: 0 !important;
-    font-size: 38px;
+    font-size: 42px;
+    font-family: 'satoshi-regular';
+    margin-bottom: 12px !important;
 }
+
 .post-head{
     font-style: italic;
+   font-family: 'satoshi-medium'
 }
 
 .faq-caption{
     font-size: 12px;
     height: 25px;
-    width: 230px;
+    width: 242px;
     border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'inter-medium'
 }
 .accordion-title {
     text-decoration: none !important;
-    font-size: 14px;
-    font-family: 'Normal';
+    font-size: 18px;
+    font-family: 'satoshi-medium';
 }
 .collapsible-content summary:hover {
     background: none !important;
@@ -57,41 +67,59 @@
     content: counter(my-counter); 
     position: absolute;
     left: -2.5em; 
-    width: 20px; 
-    height: 20px;
+    width: 21px; 
+    height: 21px;
     border-radius: 50%; 
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    font-weight: bold;
+    font-family:'satoshi-medium';
     top: 0;
     margin-left: 10px !important;
+    margin-top: 3px !important;
 }
 
 .accordion details[open]>summary .icon-caret{
     border-radius: 100%;
 }
+.custom-accordion-content{
+    margin-bottom: 0 !important;
+}
 
 
 @media screen and (max-width:767px) {
+    .custom-icon-caret{
+        top: calc(50% - 0.99rem) !important;
+    }
     .heading, .post-head{
         font-size: 22px;
     }
     .faq-caption {
         font-size: 10px;
         height: 24px;
-        width: 184px;
+        width: 212px;
     }
     .custom-icon-caret {
-        height: 26px !important;
-        width: 26px !important;
+        height: 22px !important;
+        width: 22px !important;
     }
     .accordion-title {
-        font-size: 10px;
+        font-size: 14px !important;
     }
     .custom-accordion-content{
-        font-size: 12px;
+        font-size: 13px !important;
     }
+  .heading-main-faqs{
+    margin-bottom: 10px !important;
+  }
+  .heading, .post-head, .heading-main-faqs{
+    margin-bottom: 0 !important;
+  }
+  .custom-accordion-content ol li:before{
+    width: 18px;
+    height: 20px;
+    font-size: 14px;
+  }
     
 }

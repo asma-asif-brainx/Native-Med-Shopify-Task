@@ -11,13 +11,27 @@
   }
 
   #shopify-section-{{ section.id }} .collection-product-grid .list-grid-item:first-child  .custom-card-wrapper{
-    background-color:  {{ section.settings.first-product-card-bg-color }} ; 
+    background: linear-gradient(180deg, {{ section.settings.first-product-card-bg-color }}, #CD9ED9);    
   }
 
   #shopify-section-{{ section.id }} .collection-product-grid .list-grid-item:first-child .card-info .card-head
-   ,  .collection-product-grid .list-grid-item:first-child .regular-price .regular-price-item, .collection-product-grid .list-grid-item:first-child .subtitle-metafield  {
+   ,  .collection-product-grid .list-grid-item:first-child .regular-price .regular-price-item, 
+   .collection-product-grid .list-grid-item:first-child .subtitle-metafield,
+    .collection-product-grid .list-grid-item:first-child .pre-head-metafield 
+  {
     color: {{ section.settings.card-text-color }};
   }
+
+  #shopify-section-{{ section.id }}  .collection-product-grid .list-grid-item:not(:first-child) .in-stock-badge 
+  {
+    background-color: {{ section.settings.card-text-color }};
+    color : {{ section.settings.pre-head-metafield-product }}
+  }
+
+  #shopify-section-{{ section.id }} .collection-product-grid .list-grid-item:not(:first-child) .pre-head-metafield {
+    color : {{ section.settings.pre-head-metafield-product }}
+  }
+
   #shopify-section-{{ section.id }} .product-custom-button-wrapper .product-custom-button, .get-started-link{
     color:  {{ section.settings.card-button-text-color }} !important;
   }
@@ -36,7 +50,7 @@
 
   }
 
-  #shopify-section-{{ section.id }} .in-stock-badge {
+  #shopify-section-{{ section.id }} .collection-product-grid .list-grid-item:first-child .in-stock-badge {
     background-color: {{ section.settings.in-stock-badge-bg-color }};
     color:  {{ section.settings.in-stock-badge-text-color }};
   }
@@ -283,6 +297,11 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "color",
+      "id": "pre-head-metafield-product",
+      "label": "Heading metafield product text color"
+    },
     {
       "type": "inline_richtext",
       "id": "title",
